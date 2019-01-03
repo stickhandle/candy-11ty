@@ -1,0 +1,15 @@
+{
+  "title": "World Wide Wern",
+  "url": "https://wern.ca/",
+  "feed": {
+    "subtitle": "The world according to Wern.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "https://wern.ca/feed/feed.xml",
+    "id": "https://wern.ca/"
+  },
+  "author": {
+    "name": "Werner Siemens",
+    "email": "stickhandle@gmail.com"
+  }
+}

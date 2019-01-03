@@ -1,5 +1,6 @@
 @import '_variables';
 @import '_mixins';
+@import '_prism-syntax';
 
 * {
   margin: 0;
@@ -184,3 +185,4 @@ footer {
     border-bottom: solid 1px $text-color;
   }
 }
+

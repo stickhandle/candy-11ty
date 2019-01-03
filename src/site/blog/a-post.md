@@ -9,7 +9,7 @@ The common front-matter data for all of the files in the posts section are abstr
 
 It looks like this:
 
-```
+``` json
 {
   "layout" : "layouts/post.md",
   "tags" : "post",
@@ -17,4 +17,11 @@ It looks like this:
 }
 ```
 
+Adding syntax highlighting from PrismJS like this:
+
+``` js
+function myFunction() {
+  return true;
+}
+```
 

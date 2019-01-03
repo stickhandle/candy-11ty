@@ -1,7 +1,6 @@
 var path = require('path');
 var fs = require('fs');
 
-
 // Ensure that the path to a file exists when saving
 function ensureDirectoryExistence(filePath) {
   var dirname = path.dirname(filePath);

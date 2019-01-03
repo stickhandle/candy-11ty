@@ -5,19 +5,22 @@
   "author": "Phil Hawksworth",
   "license": "MIT",
   "scripts": {
-    "gen": "gulp generate",
+    "eleventy": "gulp eleventy",
     "start": "yarn run build && yarn run serve",
     "build": "gulp build && yarn run build:functions",
     "build:local": "gulp build:local",
     "build:functions": "netlify-lambda build src/lambda",
-    "serve": "gulp watch & gulp serve & netlify-lambda serve src/lambda"
+    "watcher": "gulp watcher & netlify-lambda serve src/lambda",
+    "serve": "gulp serve & netlify-lambda serve src/lambda"    
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/philhawksworth/eleventyone"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.5.2",
+    "@11ty/eleventy": "^0.5.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.3",
     "concurrent-transform": "^1.0.0",
     "gravatar": "^1.6.0",
     "gulp": "^4.0.0",
