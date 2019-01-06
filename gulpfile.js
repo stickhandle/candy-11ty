@@ -6,6 +6,7 @@ var os = require("os");
 var parallel = require("concurrent-transform");
 var rename = require("gulp-rename");
 var imageResize = require('gulp-image-resize');
+var imagemin = require('gulp-imagemin');
 var sass = require("gulp-sass");
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
@@ -16,9 +17,9 @@ var serve = require('gulp-serve');
   Helper functions
 */ 
 
-// create a set of resize tasks at defined image widths
+// Create a set of resize tasks at defined image widths
 var resizeImageTasks = [];
-[400,1000].forEach(function(size) {
+[200,400,800,1600,2600].forEach(function(size) {
   var resizeImageTask = 'resize_' + size;
   gulp.task(resizeImageTask, function(done) {
     gulp.src(project.buildSrc + '/images/*')
@@ -26,6 +27,7 @@ var resizeImageTasks = [];
       imageResize({ width : size }),
       os.cpus().length
     ))
+    .pipe(imagemin())
     .pipe(rename(function (path) { path.basename += "-" + size; }))
     .pipe(gulp.dest(project.buildDest+ '/images'));
     done();
@@ -37,12 +39,16 @@ var resizeImageTasks = [];
   Low-level functions
 */ 
 
-// Copy our core images to the dist folder, and resize all preview images
-gulp.task('images', gulp.parallel(resizeImageTasks, function copyOriginalImages(done) {
+// Resize, min and copy our images to the dist folder (and copy the original)
+gulp.task('imageswithoriginal', gulp.parallel(resizeImageTasks, function copyOriginalImages(done) {
   gulp.src(project.buildSrc + '/images/*')
+    .pipe(imagemin())
     .pipe(gulp.dest(project.buildDest+ '/images'))
     done();
 }));
+
+// Resize, min and copy our images to the dist folder
+gulp.task('images', gulp.parallel(resizeImageTasks));
 
 // Compile SCSS files to CSS
 gulp.task('styles', function() {
@@ -90,6 +96,7 @@ gulp.task("watch", function () {
   gulp.watch(project.buildSrc + "/js/**/*", gulp.parallel('scripts'));
   gulp.watch(project.buildSrc + "/scss/**/*", gulp.parallel('styles'));
   gulp.watch(project.buildSrc + "/site/**/*",  gulp.parallel('eleventy'));
+  gulp.watch(project.buildSrc + "/images/**/*",  gulp.parallel('eleventy'));
 });
 
 // Watcher task for running watch and serve

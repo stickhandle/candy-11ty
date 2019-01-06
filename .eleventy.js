@@ -10,12 +10,17 @@ module.exports = function(eleventyConfig) {
   const pluginRss = require("@11ty/eleventy-plugin-rss");
   eleventyConfig.addPlugin(pluginRss);
 
-
-  // Add a date formatter filter to Nunjucks
+  // Add filters
+  const { DateTime } = require("luxon");
   eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js") );
   eleventyConfig.addFilter("timestamp", require("./filters/timestamp.js") );
   eleventyConfig.addFilter("squash", require("./filters/squash.js") );
+ // date format for sitemap
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toFormat('yyyy-LL-dd');
+  });
 
+  // Create your collections
   eleventyConfig.addCollection("posts", function(collection) {
     return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
   });
@@ -27,9 +32,11 @@ module.exports = function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    templateFormats : ["njk", "md"],
+    templateFormats : ["njk", "md", "html"],
     htmlTemplateEngine : "njk",
-    markdownTemplateEngine : "njk"
+    markdownTemplateEngine : "njk",
+    "dataTemplateEngine": "njk",
+    passthroughFileCopy: true
   };
 
 };
