@@ -1,9 +1,10 @@
 ---
 title: EleventyOne
-subtitle: A project scaffold for getting building with Eleventy quickly.
 layout: layouts/base.njk
 ---
+# EleventyOne 
 
+A project scaffold for getting building with Eleventy quickly.
 
 ## This site is a starting point
 

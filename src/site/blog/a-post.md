@@ -1,11 +1,18 @@
 ---
-title: A post page
+title: A Post Page
 date: 2018-03-21
+tags:
+  - ssg
+  - eleventy
 ---
 
 There's not much here in the sample post page. Better get to work.
 
+## An H2 Element
+
 The common front-matter data for all of the files in the posts section are abstracted into a `posts.json` file so that we don't need to repeat that on every file. Handy.
+
+### An H3 Element
 
 It looks like this:
 

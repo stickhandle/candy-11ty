@@ -1,6 +1,9 @@
 ---
-title: Another post page
+title: Another Post Page
 date: 2018-03-28
+tags:
+  - ssg
+  - eleventy
 ---
 
 Another simple page.

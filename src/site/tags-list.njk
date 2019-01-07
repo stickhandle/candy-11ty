@@ -1,0 +1,13 @@
+---
+permalink: /tags/
+title: List of Tags
+layout: layouts/base.njk
+---
+<h1>List of Tags</h1>
+{% for tagKey, tagVal in collections.tagList %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+  <div class="taglist-item">
+    <i class="fas fa-tag"></i>
+    <a href="{{ tagUrl | url }}" class="tag">#{{ tagKey }}</a>&nbsp;({{ tagVal }} articles)
+  </div>
+{% endfor %}

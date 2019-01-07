@@ -1,11 +1,17 @@
 @mixin bp($point) {
-  @if $point == narrow {
-    @media #{$bp-narrow} { @content; }
+  @if $point == xs {
+    @media #{$bp-xs} { @content; }
   }
-  @else if $point == mid {
-    @media #{$bp-mid} { @content; }
+  @else if $point == sm {
+    @media #{$bp-sm} { @content; }
   }
-  @else if $point == wide {
-    @media #{$bp-wide}  { @content; }
+  @else if $point == md {
+    @media #{$bp-md}  { @content; }
+  }
+  @else if $point == lg {
+    @media #{$bp-lg} { @content; }
+  }
+  @else if $point == xl {
+    @media #{$bp-xl}  { @content; }
   }
 }
