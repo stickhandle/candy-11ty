@@ -8,6 +8,7 @@ layout: layouts/base.njk
   {% set tagUrl %}/tags/{{ tag }}/{% endset %}
   <div class="taglist-item">
     <i class="fas fa-tag"></i>
-    <a href="{{ tagUrl | url }}" class="tag">#{{ tagKey }}</a>&nbsp;({{ tagVal }} articles)
+    <a href="{{ tagUrl | url }}" class="tag">#{{ tagKey }}</a>
+    <div class="tag-counter">{{ tagVal }}</div>
   </div>
 {% endfor %}

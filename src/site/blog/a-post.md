@@ -4,6 +4,7 @@ date: 2018-03-21
 tags:
   - ssg
   - eleventy
+  - jamstack
 ---
 
 There's not much here in the sample post page. Better get to work.

@@ -97,6 +97,7 @@ gulp.task("watch", function () {
   gulp.watch(project.buildSrc + "/scss/**/*", gulp.parallel('styles'));
   gulp.watch(project.buildSrc + "/site/**/*",  gulp.parallel('eleventy'));
   gulp.watch(project.buildSrc + "/images/**/*",  gulp.parallel('eleventy'));
+  gulp.watch(project.buildSrc + "/filters/**/*",  gulp.parallel('eleventy'));
 });
 
 // Watcher task for running watch and serve

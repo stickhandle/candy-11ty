@@ -159,7 +159,6 @@ a:hover, a:focus {
   }
 }
 
-
 code {
   font-size: 0.8em;
   background-color:  $bg-code;
@@ -176,6 +175,18 @@ pre {
   code {
     border: none;
   }
+}
+
+.tag-counter {
+  margin: 0px 3px;
+  border: 1px solid $text-color;
+  background-color: $bg-code;
+  display: inline-block;
+  font-size: 0.7em;
+  border-radius: 50%;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
 }
 
 footer {

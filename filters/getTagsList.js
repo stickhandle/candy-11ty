@@ -29,6 +29,9 @@ module.exports = function(collection) {
         }
       }
     });
+    //key sort asc
+    //return new Map([...tagSet.entries()].sort()); 
+    //val sort desc
+    return new Map([...tagSet.entries()].sort((a, b) => b[1] - a[1])); 
 
-    return new Map([...tagSet.entries()].sort());
   };
