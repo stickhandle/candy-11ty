@@ -21,10 +21,11 @@ module.exports = function(collection) {
   
         for (const tag of tags) {
             if (tagMap.has(tag)) {
-                cnt = tagMap.get(tag);
-                tagMap.set(tag, cnt+1);
+                items = tagMap.get(tag);
+                items.push(item);
+                tagMap.set(tag, items);
             } else {
-                tagMap.set(tag, 1);
+                tagMap.set(tag, [item]);
             }
         }
       }
