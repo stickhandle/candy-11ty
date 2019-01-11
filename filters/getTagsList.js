@@ -1,5 +1,5 @@
 module.exports = function(collection) {
-    let tagSet = new Map();
+    let tagCountMap = new Map();
     collection.getAllSorted().forEach(function(item) {
       if( "tags" in item.data ) {
         let tags = item.data.tags;
@@ -20,18 +20,18 @@ module.exports = function(collection) {
         });
   
         for (const tag of tags) {
-            if (tagSet.has(tag)) {
-                cnt = tagSet.get(tag);
-                tagSet.set(tag, cnt+1);
+            if (tagCountMap.has(tag)) {
+                cnt = tagCountMap.get(tag);
+                tagCountMap.set(tag, cnt+1);
             } else {
-                tagSet.set(tag, 1);
+                tagCountMap.set(tag, 1);
             }
         }
       }
     });
     //key sort asc
-    //return new Map([...tagSet.entries()].sort()); 
+    //return new Map([...tagCountMap.entries()].sort()); 
     //val sort desc
-    return new Map([...tagSet.entries()].sort((a, b) => b[1] - a[1])); 
+    return new Map([...tagCountMap.entries()].sort((a, b) => b[1] - a[1])); 
 
   };
