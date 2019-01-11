@@ -107,6 +107,15 @@ div.taglist-item .fas {
   padding: 0px 10px;
 }
 
+hr {
+  margin: 20px;
+  color: $header-color;
+  border: none;
+  height: 1px;
+  background-color: $header-color;
+}
+
+
 .subtitle {
   margin-top: -3em;
   margin-bottom: 6em;

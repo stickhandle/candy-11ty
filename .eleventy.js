@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("posts", function(collection) {
     return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
   });
-  eleventyConfig.addCollection("tagList", require("./filters/getTagsList"));
+  eleventyConfig.addCollection("tagList", require("./filters/tagcounter"));
   eleventyConfig.addCollection("tagListPosts", require("./filters/taglist"));
 
   return {

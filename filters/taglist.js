@@ -20,12 +20,8 @@ module.exports = function(collection) {
         });
   
         for (const tag of tags) {
-            if (tagMap.has(tag)) {
-                items = tagMap.get(tag);
-                items.push(item);
-                tagMap.set(tag, items);
-            } else {
-                tagMap.set(tag, [item]);
+            if (!tagMap.has(tag)) {
+                tagMap.set(tag, collection.getFilteredByTag(tag).reverse());
             }
         }
       }

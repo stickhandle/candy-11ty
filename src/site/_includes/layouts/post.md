@@ -9,7 +9,7 @@ templateEngineOverride: njk, md
   <div class="tags">
     <i class="fas fa-tags"></i>
     {% for tag in tags -%}
-      <div><a href="/tags/{{ tag }}" class="tag">#{{ tag }}</a></div>
+      <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
     {% endfor -%}
   </div>
   <div class="postdate">
