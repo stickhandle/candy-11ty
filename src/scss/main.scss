@@ -2,29 +2,19 @@
 @import '_mixins';
 @import '_prism-syntax';
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 ::-moz-selection {
   background-color: $accent-color;
-  color: $page-color;
+  color: $bg-page-color;
 }
 ::selection {
   background-color: $accent-color;
-  color: $page-color;
-}
-
-html {
-  background-color: $accent-color;
+  color: $bg-page-color;
 }
 
 body {
-  text-align: center;
-  background-color: $page-color;
-  color: mix($text-color, $page-color, 80%);
-  font-family: 'Roboto', sans-serif;
+  background-color: $bg-page-color;
+  color: mix($text-color, $bg-page-color, 80%);
+  font-family: $body-font;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.8;
@@ -33,16 +23,21 @@ body {
   }
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  text-align: left;
+.container-fluid {
+  padding: 0px;
+}
+
+header {
+  background-color: $bg-header-color;
+}
+
+.page-content {
+  padding-bottom: 4em;
 }
 
 h1, h2, h3 {
-  color: $header-color;
-  font-family: 'Roboto Slab', serif;
+  color: $hX-color;
+  font-family: $hX-font;
   font-weight: 700;
   margin-top:0.8em;
   margin-bottom:0.5em;
@@ -86,8 +81,8 @@ p {
 
 div.postline, div.postline a {
   display: inline;
-  color: mix($header-color, $page-color, 50%);
-  font-family: 'Roboto Mono', 'Roboto', sans-serif;
+  color: mix($hX-color, $bg-page-color, 50%);
+  font-family: $tagline-font;
   font-weight: 400;
   font-size: 14px;
   div {
@@ -109,12 +104,37 @@ div.taglist-item .fas {
 
 hr {
   margin: 20px;
-  color: $header-color;
+  color: $hX-color;
   border: none;
   height: 1px;
-  background-color: $header-color;
+  background-color: $hX-color;
 }
 
+.separator {
+  background: $bg-page-color;
+  height: 10px;
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.separator .zig-zag {
+  height: 20px;
+  background: url(/images/zig-zag-line.svg) repeat-x center center;
+  position: absolute;
+  top: -5px;
+  width: 100%;
+  z-index: 500;
+}
+
+.separator .wavy {
+  height: 20px;
+  background: url(/images/wavy-line.svg) repeat-x center center;
+  position: absolute;
+  top: -5px;
+  width: 100%;
+  z-index: 500;
+}
 
 .subtitle {
   margin-top: -3em;
@@ -128,7 +148,7 @@ ul, ol {
 a:link, a:visited {
   color: $accent-color;
   text-decoration: none;
-  border-bottom: solid 1px mix($text-color, $page-color, 10%);
+  border-bottom: solid 1px mix($text-color, $bg-page-color, 10%);
 }
 a:hover, a:focus {
   color: $text-color;
@@ -136,7 +156,7 @@ a:hover, a:focus {
 }
 
 .nav {
-  padding-top: 3em;
+  padding-top: 2em;
 
   li {
     display: inline;
@@ -144,7 +164,7 @@ a:hover, a:focus {
 
   a:link, a:visited {
     display: inline-block;
-    border-top: solid 1px mix($text-color,$page-color, 60%);
+    border-top: solid 1px mix($text-color,$bg-page-color, 60%);
     border-bottom-style: none;
     padding-top: 0.8em;
     padding-bottom: 2em;
@@ -152,7 +172,7 @@ a:hover, a:focus {
     margin-right: 0.7em;
     width: 8em;
     text-align: left;
-    color: mix($text-color,$page-color, 80%);
+    color: mix($text-color,$bg-page-color, 80%);
     text-decoration: none;
   }
   a:hover, a:focus {
@@ -164,11 +184,12 @@ a:hover, a:focus {
   small {
     display: block;
     font-size: 0.7em;
-    color: mix($text-color,$page-color, 60%);
+    color: mix($text-color,$bg-page-color, 60%);
   }
 }
 
 code {
+  font-family: $code-font;
   font-size: 0.8em;
   background-color:  $bg-code;
   border: 1px solid $accent-color;
@@ -179,11 +200,19 @@ code {
   padding-right: 4px;
 }
 
+code[class*="language-"] {
+  font-family: $code-font;
+}
+
 pre {
   border: 1px solid $accent-color;
   code {
     border: none;
   }
+}
+
+.tag-counter-list {
+  margin-bottom: 2em;
 }
 
 .tag-counter {
@@ -198,21 +227,30 @@ pre {
   text-align: center;
 }
 
+.center {
+  text-align: center;
+}
+
 footer {
-  margin-top: 6em;
-  padding-top: 4em;
-  padding-bottom: 6em;
-  border-top: solid 1px mix($text-color, $page-color, 10%);
-  font-size: 0.7em;
-  color: mix($text-color, $page-color, 40%);
+  padding-top: 2em;
+  padding-bottom: 4em;
+  background-color: $bg-footer-color;
 
   a:link, a:visited {
-    color: mix($text-color, $page-color, 70%);
-    border-bottom: solid 1px mix($accent-color, $page-color, 70%);
+    color: mix($text-color, $bg-page-color, 70%);
+    border-bottom: solid 1px mix($accent-color, $bg-page-color, 70%);
   }
   a:hover, a:focus {
     color: $accent-color;
     border-bottom: solid 1px $text-color;
+  }
+  .footer-content {
+    .ul-no-bullets {
+      list-style-type: none;
+    }
+    .fab {
+      padding: 0px 10px 0px;
+    }
   }
 }
 

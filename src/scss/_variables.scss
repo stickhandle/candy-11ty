@@ -6,9 +6,24 @@ $bp-lg: "(min-width: 992px)";
 $bp-xl: "(min-width: 1200px)";
 
 // Colours
-$page-color: #fff;
+$med-grey: #A2ABAB;
+$yellow: #FFEEA6;
+$green: #CBEAA6;
+$pink: #F7BCEF;
+$blue: #BCF4F5;
+
 $text-color: #333;
-$header-color: #555;
+$hX-color: #555;
 $accent-color: #666;
+$bg-page-color: #fff;
+$bg-header-color: $yellow; 
 $bg-code: #f5f7ff;
+$bg-footer-color: $med-grey;
+
+// Fonts
+$body-font: 'Roboto', sans-serif;
+$hX-font: Courgette, sans-serif; 
+$code-font: 'Roboto Mono', monospace;
+$tagline-font: 'Roboto Mono', 'Roboto', sans-serif;
+
 

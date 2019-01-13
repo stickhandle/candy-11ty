@@ -50,6 +50,12 @@ gulp.task('imageswithoriginal', gulp.parallel(resizeImageTasks, function copyOri
 // Resize, min and copy our images to the dist folder
 gulp.task('images', gulp.parallel(resizeImageTasks));
 
+// Move the img files to dist images folder. Img file are not preprocessed.
+gulp.task('copyimg', function() {
+  return gulp.src(project.buildSrc + '/img/*')
+    .pipe(gulp.dest(project.buildDest+ '/images'))
+});
+
 // Compile SCSS files to CSS
 gulp.task('styles', function() {
   return gulp.src(project.buildSrc + '/scss/main.scss')
@@ -75,7 +81,8 @@ gulp.task('scripts', function(done) {
 gulp.task('assets', gulp.parallel(
   'images',
   'styles',
-  'scripts'
+  'scripts',
+  'copyimg'
 ));
 
 // local webserver for development
@@ -97,6 +104,7 @@ gulp.task("watch", function () {
   gulp.watch(project.buildSrc + "/scss/**/*", gulp.parallel('styles'));
   gulp.watch(project.buildSrc + "/site/**/*",  gulp.parallel('eleventy'));
   gulp.watch(project.buildSrc + "/images/**/*",  gulp.parallel('eleventy'));
+  gulp.watch(project.buildSrc + "/img/**/*",  gulp.parallel('eleventy'));
   gulp.watch(project.buildSrc + "/filters/**/*",  gulp.parallel('eleventy'));
 });
 

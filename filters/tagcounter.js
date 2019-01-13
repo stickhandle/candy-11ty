@@ -29,9 +29,8 @@ module.exports = function(collection) {
         }
       }
     });
-    //key sort asc
-    //return new Map([...tagCountMap.entries()].sort()); 
     //val sort desc
-    return new Map([...tagCountMap.entries()].sort((a, b) => b[1] - a[1])); 
-
+    //return new Map([...tagCountMap.entries()].sort((a, b) => b[1] - a[1])); 
+    //key sort asc
+    return new Map([...tagCountMap.entries()].sort()); 
   };
