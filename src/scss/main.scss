@@ -244,12 +244,21 @@ footer {
     color: $accent-color;
     border-bottom: solid 1px $text-color;
   }
+  .footer-header {
+    hr {
+      margin: 20px 0px;
+    }
+  }
   .footer-content {
+    .footer-col {
+      padding-left: 1em;
+    }
     .ul-no-bullets {
       list-style-type: none;
+      padding-left: 0px;
     }
     .fab {
-      padding: 0px 10px 0px;
+      padding: 0px 10px 0px 0px;
     }
   }
 }
