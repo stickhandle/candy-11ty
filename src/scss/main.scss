@@ -118,6 +118,10 @@ hr {
   margin: 0;
 }
 
+.separator.bg-image {
+  background: url(/images/candy_swirl-200.jpg) repeat-x center center;
+}
+
 .separator .zig-zag {
   height: 20px;
   background: url(/images/zig-zag-line.svg) repeat-x center center;
