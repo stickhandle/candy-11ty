@@ -10,6 +10,7 @@ var imagemin = require('gulp-imagemin');
 var sass = require("gulp-sass");
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var purgecss = require('gulp-purgecss')
 var pump = require('pump');
 var serve = require('gulp-serve');
 
@@ -57,13 +58,25 @@ gulp.task('copyimg', function() {
 });
 
 // Compile SCSS files to CSS
-gulp.task('styles', function() {
+gulp.task('sassy', function() {
   return gulp.src(project.buildSrc + '/scss/main.scss')
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(gulp.dest(project.buildDest+ '/css'));
 });
+
+// Purge unused css
+gulp.task('purgecss', () => {
+  return gulp.src(project.buildDest+'/css/*.css')
+      .pipe(purgecss({
+          content: [project.buildDest+"/**/*.html"]
+      }))
+      .pipe(gulp.dest(project.buildDest+'/css'))
+})
+
+gulp.task('styles', gulp.series('sassy', 'purgecss'));
+
 
 // Uglify our javascript files into one and use pump to expose errors
 gulp.task('scripts', function(done) {
@@ -97,12 +110,13 @@ gulp.task('serve', serve({
 
 // Run 11ty to build the pages
 gulp.task('eleventy', shell.task('eleventy'));
+gulp.task('pages', gulp.series('eleventy', 'styles'));
 
 // Watch folders for changes
 gulp.task("watch", function () {
   gulp.watch(project.buildSrc + "/js/**/*", gulp.parallel('scripts'));
   gulp.watch(project.buildSrc + "/scss/**/*", gulp.parallel('styles'));
-  gulp.watch(project.buildSrc + "/site/**/*",  gulp.parallel('eleventy'));
+  gulp.watch(project.buildSrc + "/site/**/*",  gulp.parallel('pages'));
   gulp.watch(project.buildSrc + "/images/**/*",  gulp.parallel('eleventy'));
   gulp.watch(project.buildSrc + "/img/**/*",  gulp.parallel('eleventy'));
   gulp.watch(project.buildSrc + "/filters/**/*",  gulp.parallel('eleventy'));

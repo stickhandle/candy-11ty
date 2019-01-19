@@ -1,11 +1,36 @@
-<header>
-    <ul class="nav">
-        <li>
-            <a href="/">home<small>where the heart is</small></a>
-        </li>
-        <li>
-            <a href="/about">about<small>all about this</small></a>
-        </li>
-    </ul>
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand candy-logo" href="/">
+            <span>Candy</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog/"><i class="far fa-comment"></i>Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/portfolio/"><i class="fas fa-camera"></i>Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/"><i class="fas fa-bullhorn"></i>About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav pull-sm-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/stickhandle/eleventy-candy"><i class="fab fa-github"></i>Github</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-search"></i>Search</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="separator bg-image"><div class="wavy"></div></div>
 </header>
-<div class="separator bg-image"><div class="wavy"></div></div>

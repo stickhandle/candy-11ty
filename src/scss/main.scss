@@ -159,12 +159,52 @@ a:hover, a:focus {
   border-bottom: solid 1px $accent-color;
 }
 
+.candy-logo, a.candy-logo, nav a.candy-logo:link {
+  font-weight: bold;
+  text-decoration: underline;
+  font-family: $hX-font;
+}
+
+nav {
+  a:link, a:visited {
+    color: $text-color;
+    text-decoration: none;
+    border: none;
+  }
+  .fas, .fab, .far {
+    padding-right: 5px;
+    padding-left: 10px;
+  }
+  a:hover, a:focus {
+    color: $med-grey;
+  }
+  a.navbar-brand {
+    font-size: 1.7em;
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+  }
+  a.navbar-brand:hover, a.navbar-brand:focus {
+    color: $green;
+  }
+
+  button.navbar-toggler {
+    outline-color: $med-grey;   
+  }  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+}
+
 .nav {
   padding-top: 2em;
 
   li {
     display: inline;
   }
+
 
   a:link, a:visited {
     display: inline-block;
@@ -222,7 +262,7 @@ pre {
 .tag-counter {
   margin: 0px 3px;
   border: 1px solid $text-color;
-  background-color: $bg-code;
+  background-color: $blue;
   display: inline-block;
   font-size: 0.7em;
   border-radius: 50%;
