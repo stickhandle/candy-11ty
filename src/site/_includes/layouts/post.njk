@@ -22,14 +22,21 @@ templateEngineOverride: njk, md
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col main-image">
-    <img src="/images/candy_bg_egg-1600.jpg" alt="Eggs over Candy" title="Eggs over Candy">
+{% if mainImageFilename %}
+  {% if not mainImageTitle  %}
+    {% set mainImageTitle = mainImageFilename %}
+  {% endif %}
+  <div class="row">
+    <div class="col main-image">
+      <img src="/images/{{ mainImageFilename }}-{{ mainImageSize }}.{{ mainImageExt }}" alt="{{ mainImageTitle | safe }}" title="{{ mainImageTitle | safe }}">
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col photoline">Eggs over Candy</div>
-</div>
+  <div class="row">
+    <div class="col photoline">
+      <div>{{ mainImageTitle | safe }}</div>
+    </div>
+  </div>
+{% endif %}
 <div class="row">
   <div class="col-8 post-section">
     {{ content | safe }}

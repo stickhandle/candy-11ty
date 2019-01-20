@@ -79,9 +79,9 @@ p {
   margin-bottom: 1em;
 }
 
-div.postline, div.postline a, div.photoline {
+div.postline, div.postline a {
   display: inline;
-  color: mix($hX-color, $bg-page-color, 50%);
+  color: $tagline-color;
   font-family: $tagline-font;
   font-weight: 400;
   font-size: 14px;
@@ -91,7 +91,16 @@ div.postline, div.postline a, div.photoline {
 }
 div.photoline {
   text-align: right;
-  margin-bottom: 10px;
+  font-family: $photoline-font;
+  font-weight: 400;
+  font-size: 14px;
+  background: $bg-page-color;
+  opacity: 0.7;
+  margin: -50px 15px 0px;
+  div {
+    color: $photoline-color;
+    padding-top: 10px;
+  }
 }
 
 div.postdate {
@@ -204,7 +213,6 @@ nav {
 
 .main-image img {
   max-width: 100%;
-  max-height: 100%;
   padding: 10px 0px 5px;
 }
 

@@ -5,6 +5,8 @@ tags:
   - ssg
   - eleventy
   - jamstack
+mainImageFilename: jellybeans
+mainImageTitle: Sea of Jellybeans
 ---
 
 There's not much here in the sample post page. Better get to work.
