@@ -44,12 +44,12 @@ h1, h2, h3 {
   line-height: 1em;
 }
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   @include bp(md) {
-    font-size: 4em;
+    font-size: 2.5em;
   }
   @include bp(xl) {
-    font-size: 5em;
+    font-size: 3em;
   }
 }
 h1.title {
@@ -57,21 +57,21 @@ h1.title {
   margin-bottom:0.1em;
 }
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   @include bp(md) {
-    font-size: 2.5em;
+    font-size: 1.75em;
   }
   @include bp(xl) {
-    font-size: 3.5em;
+    font-size: 2.0em;
   }
 }
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   @include bp(md) {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   @include bp(xl) {
-    font-size: 2.5em;
+    font-size: 1.75em;
   }
 }
 
@@ -79,7 +79,7 @@ p {
   margin-bottom: 1em;
 }
 
-div.postline, div.postline a {
+div.postline, div.postline a, div.photoline {
   display: inline;
   color: mix($hX-color, $bg-page-color, 50%);
   font-family: $tagline-font;
@@ -88,6 +88,10 @@ div.postline, div.postline a {
   div {
     display: inline;
   }
+}
+div.photoline {
+  text-align: right;
+  margin-bottom: 10px;
 }
 
 div.postdate {
@@ -198,38 +202,10 @@ nav {
   }
 }
 
-.nav {
-  padding-top: 2em;
-
-  li {
-    display: inline;
-  }
-
-
-  a:link, a:visited {
-    display: inline-block;
-    border-top: solid 1px mix($text-color,$bg-page-color, 60%);
-    border-bottom-style: none;
-    padding-top: 0.8em;
-    padding-bottom: 2em;
-    margin-left: 0;
-    margin-right: 0.7em;
-    width: 8em;
-    text-align: left;
-    color: mix($text-color,$bg-page-color, 80%);
-    text-decoration: none;
-  }
-  a:hover, a:focus {
-      color: $text-color;
-      border-top: solid 1px $accent-color;
-      border-bottom-style: none;
-  }
-
-  small {
-    display: block;
-    font-size: 0.7em;
-    color: mix($text-color,$bg-page-color, 60%);
-  }
+.main-image img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 10px 0px 5px;
 }
 
 code {

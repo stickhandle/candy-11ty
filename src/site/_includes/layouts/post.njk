@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+bodyClass: candy-post
+templateEngineOverride: njk, md
+---
+<div class="row">
+  <div class="col">
+    <h1 class="title">{{ title }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col postline">
+    <div class="tags">
+      <i class="fas fa-tags"></i>
+      {% for tag in tags -%}
+        <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+      {% endfor -%}
+    </div>
+    <div class="postdate">
+      <i class="fas fa-calendar-day"></i>
+      <div>Last updated on {{ page.date | formatDisplayDate }}</div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col main-image">
+    <img src="/images/candy_bg_egg-1600.jpg" alt="Eggs over Candy" title="Eggs over Candy">
+  </div>
+</div>
+<div class="row">
+  <div class="col photoline">Eggs over Candy</div>
+</div>
+<div class="row">
+  <div class="col-8 post-section">
+    {{ content | safe }}
+  </div>
+  <div class="col-4 sidebar-section">
+  </div>
+</div>
+
