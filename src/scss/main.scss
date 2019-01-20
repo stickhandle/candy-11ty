@@ -216,6 +216,11 @@ nav {
   padding: 10px 0px 5px;
 }
 
+.portfolio-item {
+  border: 1px solid $med-grey;
+
+}
+
 code {
   font-family: $code-font;
   font-size: 0.8em;
@@ -237,6 +242,36 @@ pre {
   code {
     border: none;
   }
+}
+
+blockquote {
+  display: block;
+  text-align: center;
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: #eee;
+  padding: 1.5em 0 0.5em;
+  margin: 1.5em 0;
+  position: relative;
+}
+blockquote:before {
+  content: '\201C \2003';
+  position: absolute;
+  top: 0em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4rem;
+  height: 2rem;
+  font: 6em/1.08em $hX-font;
+  text-align: center;
+  background-color: white;
+}
+blockquote:after {
+  content: "\2013 \2003" attr(cite);
+  display: block;
+  text-align: right;
+  font-family: $blockquote-person-font;
+  font-size: 0.875em;
 }
 
 .tag-counter-list {

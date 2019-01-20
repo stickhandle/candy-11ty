@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+bodyClass: candy-page
+templateEngineOverride: njk, md
+---
+<div class="row">
+  <div class="col">
+    <h1 class="title">{{ title }}</h1>
+  </div>
+</div>
+ {{ content | safe }}
+
+
