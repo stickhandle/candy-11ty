@@ -31,5 +31,18 @@ The pages found in in the posts
 {%- endfor -%}
 </ul>
 
+## Portfolio photos
+
+The pages found in in the portfolio
+
+<ul class="listing">
+{%- for photo in collections.photos -%}
+  <li>
+    <a href="{{ photo.url }}">{{ photo.data.title }}</a> -
+    <time datetime="{{ photo.date }}">{{ photo.date | dateDisplay }}</time>
+  </li>
+{%- endfor -%}
+</ul>
+
 
 

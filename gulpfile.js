@@ -20,7 +20,7 @@ var serve = require('gulp-serve');
 
 // Create a set of resize tasks at defined image widths
 var resizeImageTasks = [];
-[200,400,800,1600,2600].forEach(function(size) {
+[200,400,800,1600].forEach(function(size) {
   var resizeImageTask = 'resize_' + size;
   gulp.task(resizeImageTask, function(done) {
     gulp.src(project.buildSrc + '/images/*')

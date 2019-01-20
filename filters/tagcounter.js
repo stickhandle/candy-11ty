@@ -12,6 +12,7 @@ module.exports = function(collection) {
             case "all":
             case "nav":
             case "post":
+            case "photo":
             case "posts":
               return false;
           }

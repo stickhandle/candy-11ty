@@ -15,17 +15,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js") );
   eleventyConfig.addFilter("timestamp", require("./filters/timestamp.js") );
   eleventyConfig.addFilter("squash", require("./filters/squash.js") );
-  // date formats
+  // date formats 
   eleventyConfig.addFilter('formatIsoDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toISODate(); // '2017-08-24'
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toISODate(); // '2017-08-24'
   });  
   eleventyConfig.addFilter('formatDisplayDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toFormat('dd-LLL-yyyy'); // '24-Aug-2017'
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('dd-LLL-yyyy'); // '24-Aug-2017'
   });
 
   // Create your collections
   eleventyConfig.addCollection("posts", function(collection) {
     return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
+  });  
+  eleventyConfig.addCollection("photos", function(collection) {
+    return collection.getFilteredByGlob("src/site/portfolio/*.md").reverse();
   });
   eleventyConfig.addCollection("tagList", require("./filters/tagcounter"));
   eleventyConfig.addCollection("tagListPosts", require("./filters/taglist"));

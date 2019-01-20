@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+bodyClass: candy-photo
+templateEngineOverride: njk, md
+---
+<div class="row">
+  <div class="col">
+    <h1 class="title">{{ title }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col postline">
+    <div class="tags">
+      <i class="fas fa-tags"></i>
+      {% for tag in tags -%}
+        <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+      {% endfor -%}
+    </div>
+    <div class="postdate">
+      <i class="fas fa-calendar-day"></i>
+      <div>Last updated on {{ page.date | formatDisplayDate }}</div>
+    </div>
+  </div>
+</div>
+{% if mainImageFilename %}
+  {% if not mainImageTitle  %}
+    {% set mainImageTitle = mainImageFilename %}
+  {% endif %}
+  <div class="row">
+    <div class="col main-image">
+      <img src="/images/{{ mainImageFilename }}-{{ mainImageSize }}.{{ mainImageExt }}" alt="{{ mainImageTitle | safe }}" title="{{ mainImageTitle | safe }}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col photoline">
+      <div>{{ mainImageTitle | safe }}</div>
+    </div>
+  </div>
+{% endif %}

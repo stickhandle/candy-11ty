@@ -1,6 +1,6 @@
 {
   "layout" : "layouts/post.njk",
-  "tags" : ["post", "candy"],
+  "tags" : ["untagged"],
   "mainImageExt" : "jpg",
   "mainImageSize" : "1600"
 }

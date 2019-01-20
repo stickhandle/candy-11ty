@@ -1,0 +1,6 @@
+{
+    "layout" : "layouts/photo.njk",
+    "tags" : ["untagged"],
+    "mainImageExt" : "jpg",
+    "mainImageSize" : "1600"
+  }
