@@ -11,7 +11,6 @@ function ensureDirectoryExistence(filePath) {
   fs.mkdirSync(dirname);
 }
 
-
 /*
  Many of our scripts will need these
 */
@@ -34,3 +33,4 @@ module.exports = {
   },
 
 };
+

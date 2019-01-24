@@ -3,26 +3,63 @@ permalink: /tags/
 title: List of Tags
 layout: layouts/base.njk
 ---
-<h1>List of Tags</h1>
-<div class="tag-counter-list">
+<div class="row"><h1>List of Tags</h1></div>
+<div class="row tag-counter-list">
   {% for tagKey, tagVal in collections.tagList %}
     {% set tagUrl %}/tags/#{{ tagKey }}{% endset %}
-    <div class="taglist-item">
+    <div class="col-4 taglist-item">
       <i class="fas fa-tag"></i>
       <a href="{{ tagUrl | url }}" class="tag">#{{ tagKey }}</a>
       <div class="tag-counter">{{ tagVal }}</div>
     </div>
   {% endfor %}
 </div>
-<div class="separator"><div class="zig-zag"></div></div>
+<div class="tag-counter-list">
+</div>
+<div class="row separator"><div class="zig-zag"></div></div>
+
 <div class="tag-list">
   {% for tag, pages in collections.tagListPosts %}
-    <a name="{{tag}}"><div class="header-spacer"></div></a>
-    <h2>#{{tag}}</h2>
+    <div class="row">
+      <a name="{{tag}}"><div class="header-spacer"></div></a>
+    </div>
+    <div class="row">
+      <h2>#{{tag}}</h2>
+    </div>
     {% for page in pages %}
-      <div class="taglistpost-item">
-        <time datetime="{{ page.date }}">{{ page.date | formatDisplayDate }}</time> - <a href="{{ page.url }}">{{ page.data.title }}</a>
-      </div>
+        <div class="row taglistpost-item">
+            <div class="col-3 main-image">
+              <a href="{{ page.url }}">
+                {% if page.data.mainImageFilename %}
+                  <img src="/images/{{ page.data.mainImageFilename }}-{{ page.data.thumbImageSize }}.{{ page.data.mainImageExt }}" alt="{{ page.data.mainImageTitle | safe }}" title="{{ page.data.mainImageTitle | safe }}">
+                {% else %}
+                  <img src="/images/no_image-400.jpg" alt="no image available" title="no image available">
+                {% endif %}
+              </a>
+          </div>
+          <div class="col-9">
+            <div class="row"><h3><a href="{{ page.url }}">{{ page.data.title }}</a></h3></div>
+              <div class="row">
+                <div class="col postline">
+                    <div class="tags">
+                        <i class="fas fa-tags"></i>
+                        {% for tag in page.data.tags -%}
+                            <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+                        {% endfor -%}
+                    </div>
+                    <div class="postdate">
+                      <i class="fas fa-calendar-day"></i>
+                      <div>Last updated on {{ page.date | formatDisplayDate }}</div>
+                    </div>
+                </div>
+              </div>
+              {% if page.data.excerpt %}
+                <div class="row">
+                  <div class="col">{{ page.templateContent | excerpt | safe }}</div>
+                </div>
+              {% endif %}
+          </div>
+        </div>
     {% endfor %}
   {% endfor %}
 </div>

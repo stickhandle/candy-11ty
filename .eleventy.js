@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js") );
   eleventyConfig.addFilter("timestamp", require("./filters/timestamp.js") );
   eleventyConfig.addFilter("squash", require("./filters/squash.js") );
+  eleventyConfig.addFilter("excerpt", require("./filters/excerpt.js") );
   // date formats 
   eleventyConfig.addFilter('formatIsoDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toISODate(); // '2017-08-24'

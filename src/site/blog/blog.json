@@ -2,5 +2,7 @@
   "layout" : "layouts/post.njk",
   "tags" : ["untagged"],
   "mainImageExt" : "jpg",
-  "mainImageSize" : "1600"
+  "mainImageSize" : "1600",
+  "thumbImageSize" : "400",
+  "excerpt": true
 }
