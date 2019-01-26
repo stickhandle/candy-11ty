@@ -38,26 +38,30 @@ layout: layouts/base.njk
               </a>
           </div>
           <div class="col-9">
-            <div class="row"><h3><a href="{{ page.url }}">{{ page.data.title }}</a></h3></div>
-              <div class="row">
-                <div class="col postline">
-                    <div class="tags">
-                        <i class="fas fa-tags"></i>
-                        {% for tag in page.data.tags -%}
-                            <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
-                        {% endfor -%}
-                    </div>
-                    <div class="postdate">
-                      <i class="fas fa-calendar-day"></i>
-                      <div>Last updated on {{ page.date | formatDisplayDate }}</div>
-                    </div>
-                </div>
+            <div class="row">
+              <div class="col">
+                <h3><a href="{{ page.url }}">{{ page.data.title }}</a></h3>
               </div>
-              {% if page.data.excerpt %}
-                <div class="row">
-                  <div class="col">{{ page.templateContent | excerpt | safe }}</div>
-                </div>
-              {% endif %}
+            </div>
+            <div class="row">
+              <div class="col postline">
+                  <div class="tags">
+                      <i class="fas fa-tags"></i>
+                      {% for tag in page.data.tags -%}
+                          <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+                      {% endfor -%}
+                  </div>
+                  <div class="postdate">
+                    <i class="fas fa-calendar-day"></i>
+                    <div>Last updated on {{ page.date | formatDisplayDate }}</div>
+                  </div>
+              </div>
+            </div>
+            {% if page.data.excerpt %}
+              <div class="row">
+                <div class="col">{{ page.templateContent | excerpt | safe }}</div>
+              </div>
+            {% endif %}
           </div>
         </div>
     {% endfor %}
