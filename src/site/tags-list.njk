@@ -59,7 +59,9 @@ layout: layouts/base.njk
             </div>
             {% if page.data.excerpt %}
               <div class="row">
-                <div class="col">{{ page.templateContent | excerpt | safe }}</div>
+                <div class="col excerpt">{{ page.templateContent | excerpt | safe }}
+                  <div class="more">... <a href="{{ page.url }}">continue<a></div>
+                </div>
               </div>
             {% endif %}
           </div>
