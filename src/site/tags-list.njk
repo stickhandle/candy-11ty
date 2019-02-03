@@ -43,9 +43,11 @@ layout: layouts/base.njk
             <div class="row">
               <div class="col postline">
                   <div class="tags">
-                      <i class="fas fa-tags"></i>
                       {% for tag in page.data.tags -%}
+                        {% if tag != "untagged" -%}
+                          {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
                           <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+                        {% endif -%}
                       {% endfor -%}
                   </div>
                   <div class="postdate">

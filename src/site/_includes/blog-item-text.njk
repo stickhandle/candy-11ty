@@ -7,9 +7,11 @@
     <div class="row">
         <div class="col postline">
             <div class="tags">
-                <i class="fas fa-tags"></i>
-                {% for tag in post.data.tags -%}
-                    <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+               {% for tag in post.data.tags -%}
+                    {% if tag != "untagged" -%}
+                        {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
+                        <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+                    {% endif -%}
                 {% endfor -%}
             </div>
             <div class="postdate">
