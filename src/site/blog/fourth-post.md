@@ -1,6 +1,9 @@
 ---
 title: Fourth Post Page
 date: 2019-01-13
+tags:
+    - ssg
+    - star
 ---
 
 Another simple page.

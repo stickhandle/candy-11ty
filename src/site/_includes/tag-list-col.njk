@@ -1,0 +1,10 @@
+<div class="row">
+{% for tagKey, tagVal in collections.tagList %}
+{% set tagUrl %}/tags/#{{ tagKey }}{% endset %}
+<div class="col-6 taglist-item">
+    <i class="fas fa-tag"></i>
+    <a href="{{ tagUrl | url }}" class="tag">#{{ tagKey }}</a>
+    <div class="tag-counter">{{ tagVal }}</div>
+</div>
+{% endfor %}
+</div>

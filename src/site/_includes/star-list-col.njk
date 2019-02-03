@@ -1,0 +1,28 @@
+{%- for star in collections.stars.slice(0, 2) %}
+{%- if star.url != page.url %}
+<div class="star-item">
+    {%- if star.data.mainImageFilename %}
+        <div class="row">
+            <div class="col">
+                <a href="{{ star.url }}">
+                    <img src="/images/{{ star.data.mainImageFilename }}-{{ star.data.thumbImageSize }}.{{ star.data.mainImageExt }}" alt="{{ star.data.mainImageTitle | safe }}" title="{{ star.data.mainImageTitle | safe }}">
+                </a>
+            </div>
+        </div>
+    {% endif -%}
+    <div class="row">
+        <div class="col">
+            <div class="mini-h3"><a href="{{ star.url }}">{{ star.data.title }}</a></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col postline">
+            <div class="postdate" style="margin-left: 0px">
+                <i class="fas fa-calendar-day"></i>
+                <div>{{ star.date | formatDisplayDate }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{%- endif %}
+{%- endfor %}

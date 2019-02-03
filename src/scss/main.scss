@@ -75,6 +75,71 @@ h3 {
   }
 }
 
+.mini-h3 {
+  color: $hX-color;
+  font-family: $hX-font;
+  font-weight: 700;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  line-height: 0.5em;
+  font-size: 0.5em;
+  @include bp(md) {
+    font-size: 0.75em;
+  }
+  @include bp(xl) {
+    font-size: 1em;
+  }
+}
+
+.star-item {
+  padding: 10px 0px;
+  border-top: 1px solid;
+  img {
+    width: 100%;
+  }
+}
+
+.widget-title {
+  font-family: $widget-title-font;
+  color: $hX-color;
+  font-weight: 700;
+  margin-top:0.7em;
+  margin-bottom:0.7em;
+  line-height: 1.0em;
+  font-size: 0.75em;
+  @include bp(md) {
+    font-size: 1.0em;
+  }
+  @include bp(xl) {
+    font-size: 1.25em;
+  }
+}
+
+.star-col-widget {
+  padding: 0px 10px;
+  background-color: $bg-star-col-widget;
+  border-top: 2px solid $med-grey;
+  border-bottom: 2px solid $med-grey;
+}
+
+.tag-col-widget {
+  padding: 0px 10px 10px;
+  border-bottom: 2px solid $med-grey;
+  background-color: $bg-tag-col-widget;
+  .taglist-item {
+    font-size: 14px;
+    .fas {
+      padding: 0px;
+    }
+    .tag-counter {
+      margin: 0px 3px;
+      border-radius: 50%;
+      width: 15px;
+      line-height: 15px;  
+    }
+  }
+}
+
 .taglistpost-item {
   h3 {
     margin-top: 0.5em;
@@ -133,7 +198,7 @@ div.taglist-item .fas {
 }
 
 .blog-list-item.odd {
-    background-color: mix($blue, $bg-page-color, 20%);
+    background-color: $bg-blog-list-item-odd;
 }
 
 .excerpt {

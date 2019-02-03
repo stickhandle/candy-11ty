@@ -33,6 +33,9 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.addCollection("tagList", require("./filters/tagcounter"));
   eleventyConfig.addCollection("tagListPosts", require("./filters/taglist"));
+  eleventyConfig.addCollection("stars", function(collection) {
+    return collection.getFilteredByTag("star").reverse();
+  });  
 
   return {
     dir: {

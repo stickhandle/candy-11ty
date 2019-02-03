@@ -42,6 +42,18 @@ templateEngineOverride: njk, md
     {{ content | safe }}
   </div>
   <div class="col-4 sidebar-section">
+    <div class="star-col-widget">
+      <div class="row">
+        <div class="col widget-title">Favourite Posts</div>
+      </div>
+      {%- include "star-list-col.njk" -%}
+    </div>
+    <div class="tag-col-widget">
+      <div class="row">
+        <div class="col widget-title">List of Tags</div>
+      </div>
+      {%- include "tag-list-col.njk" -%}
+    </div>
   </div>
 </div>
 
