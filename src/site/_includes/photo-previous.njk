@@ -1,0 +1,19 @@
+{% set currentItemIndex = 0 %}
+{% for item in collections.photos %}
+    {% if item.url == page.url %}
+        {% set currentItemIndex = loop.index0 %}
+    {% endif %}
+{% endfor %}
+{% set previousItem = collections.photos[currentItemIndex + 1] %}
+{%- if previousItem -%}
+    <a href="{{ previousItem.url }}">
+    <div class="previous">
+        <span class="next-previous-ind">...previous image</span>
+        <div class="row">
+            <div class="col">
+                <div class="mini-h3">&lt;&lt;&nbsp;{{ previousItem.data.title }}</div>
+            </div>
+        </div>
+    </div>
+    </a>
+{%- endif -%}

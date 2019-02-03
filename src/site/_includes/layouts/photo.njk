@@ -36,4 +36,8 @@ templateEngineOverride: njk, md
       <div>{{ mainImageTitle | safe }}</div>
     </div>
   </div>
+  <div class="row next-prev-row">
+    <div class="col-6" style="padding-right: 0px">{% include "photo-previous.njk" -%}</div>
+    <div class="col-6" style="padding-left: 0px">{% include "photo-next.njk" -%}</div>
+  </div>
 {% endif %}
