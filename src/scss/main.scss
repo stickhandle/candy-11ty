@@ -146,6 +146,32 @@ h3 {
     margin-bottom: 5px;
   }
 }
+.next-prev-row {
+  margin-top: 40px;
+}
+
+.next {
+  text-align: right;
+  border-top: 2px solid $med-grey;
+  border-bottom: 2px solid $med-grey;
+  padding-bottom: 10px;
+}
+
+.previous {
+  text-align: left;
+  border-top: 2px solid $med-grey;
+  border-bottom: 2px solid $med-grey;
+  padding-bottom: 10px;
+}
+
+.next:hover, .previous:hover {
+  background-color: $bg-next-previous-hover;
+}
+
+.next-previous-ind {
+  font-family: $next-previous-ind-font;
+  font-size: 14px;
+}
 
 p {
   margin-bottom: 1em;

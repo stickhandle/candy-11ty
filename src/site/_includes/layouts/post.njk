@@ -39,7 +39,11 @@ templateEngineOverride: njk, md
 {% endif %}
 <div class="row">
   <div class="col-8 post-section">
-    {{ content | safe }}
+    <div>{{ content | safe }}</div>
+    <div class="row next-prev-row">
+      <div class="col-6" style="padding-right: 0px">{% include "blog-previous.njk" -%}</div>
+      <div class="col-6" style="padding-left: 0px">{% include "blog-next.njk" -%}</div>
+    </div>
   </div>
   <div class="col-4 sidebar-section">
     <div class="star-col-widget">

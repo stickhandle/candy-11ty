@@ -25,6 +25,7 @@ $bg-footer-color: $med-grey;
 $bg-blog-list-item-odd: mix($blue, $bg-page-color, 20%);
 $bg-star-col-widget: mix($blue, $bg-page-color, 20%);
 $bg-tag-col-widget: mix($pink, $bg-page-color, 20%);
+$bg-next-previous-hover: mix($blue, $bg-page-color, 20%);
 
 // Fonts
 $body-font: 'Roboto', sans-serif;
@@ -35,5 +36,6 @@ $more-font: 'Roboto Mono', 'Roboto', sans-serif;
 $photoline-font: 'Roboto Mono', 'Roboto', sans-serif;
 $blockquote-person-font: 'Roboto Mono', 'Roboto', sans-serif;
 $widget-title-font: 'Roboto', sans-serif;
+$next-previous-ind-font: 'Roboto Mono', 'Roboto', sans-serif;
 
 
