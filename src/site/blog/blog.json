@@ -3,6 +3,7 @@
   "tags" : ["untagged"],
   "mainImageExt" : "jpg",
   "mainImageSize" : "1600",
+  "medImageSize" : "800",
   "thumbImageSize" : "400",
   "excerpt": true
 }

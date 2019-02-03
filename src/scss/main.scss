@@ -124,6 +124,18 @@ div.taglist-item .fas {
   padding: 0px 10px;
 }
 
+.blog-list-item {
+  
+  padding: 0px 20px 20px;
+  .excerpt {
+    margin-top: 20px;
+  }
+}
+
+.blog-list-item.odd {
+    background-color: mix($blue, $bg-page-color, 20%);
+}
+
 .excerpt {
   .more {
     display: inline-block;
