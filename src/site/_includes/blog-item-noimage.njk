@@ -1,0 +1,28 @@
+<div class="col">
+    <div class="row">
+        <div class="col">
+            <h3><a class="title-href" href="{{ post.url }}">{{ post.data.title }}</a></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col postline">
+            <div class="tags">
+                <i class="fas fa-tags"></i>
+                {% for tag in post.data.tags -%}
+                    <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+                {% endfor -%}
+            </div>
+            <div class="postdate">
+                <i class="fas fa-calendar-day"></i>
+                <div>Last updated on {{ post.date | formatDisplayDate }}</div>
+            </div>
+        </div>
+    </div>
+    {% if post.data.excerpt -%}
+        <div class="row">
+            <div class="col excerpt">{{ post.templateContent | excerpt | safe }}
+                <div class="more">... <a href="{{ post.url }}">continue</a></div>
+            </div>
+        </div>
+    {% endif -%}
+</div>
