@@ -6,5 +6,6 @@
   "medImageSize" : "800",
   "thumbImageSize" : "400",
   "tinyImageSize" : "200",
-  "excerpt": true
+  "excerpt": true,
+  "similarScore" : 0
 }

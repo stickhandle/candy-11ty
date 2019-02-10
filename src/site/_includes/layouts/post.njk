@@ -42,6 +42,9 @@ templateEngineOverride: njk, md
 <div class="row">
   <div class="col-8 post-section">
     <div>{{ content | safe }}</div>
+    {%- for simpost in collections.posts | similar(tags, page.url, 1) -%}
+      <div class="row">{{ simpost.similarScore}} - {{ simpost.url }}</div>
+    {%- endfor -%}
     <div class="row next-prev-row">
       <div class="col-6" style="padding-right: 0px">{% include "blog-previous.njk" -%}</div>
       <div class="col-6" style="padding-left: 0px">{% include "blog-next.njk" -%}</div>
