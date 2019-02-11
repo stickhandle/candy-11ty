@@ -40,35 +40,37 @@ templateEngineOverride: njk, md
   </div>
 {% endif %}
 <div class="row">
-  <div class="col-8 post-section">
+  <div class="col-lg-8 post-section">
     <div>{{ content | safe }}</div>
     {%- for simpost in collections.posts | similar(tags, page.url, 3) -%}
       {%- if loop.first -%}
         <div class="row"><div class="col widget-title">Related posts ...</div></div>
         <div class="row similar-posts">
       {%- endif -%}
-          <div class="col-4 similar-post">
-            {%- if simpost.data.mainImageFilename -%}
-                <div class="row">
-                    <div class="col">
-                        <a href="{{ simpost.url }}">
-                            <img src="/images/{{ simpost.data.mainImageFilename }}-{{ simpost.data.tinyImageSize }}.{{ simpost.data.mainImageExt }}" alt="{{ simpost.data.mainImageTitle | safe }}" title="{{ simpost.data.mainImageTitle | safe }}">
-                        </a>
-                    </div>
-                </div>
-            {%- endif -%}
-            <div class="row">
-                <div class="col">
-                    <div class="mini-h3"><a href="{{ simpost.url }}">{{ simpost.data.title }}</a></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col postline">
-                    <div class="postdate" style="margin-left: 0px">
-                        <i class="fas fa-calendar-day"></i>
-                        <div>{{ simpost.date | formatDisplayDate }}</div>
-                    </div>
-                </div>
+          <div class="col-md-4">
+            <div class="similar-post h-100">
+              {%- if simpost.data.mainImageFilename -%}
+                  <div class="row">
+                      <div class="col">
+                          <a href="{{ simpost.url }}">
+                              <img src="/images/{{ simpost.data.mainImageFilename }}-{{ simpost.data.tinyImageSize }}.{{ simpost.data.mainImageExt }}" alt="{{ simpost.data.mainImageTitle | safe }}" title="{{ simpost.data.mainImageTitle | safe }}">
+                          </a>
+                      </div>
+                  </div>
+              {%- endif -%}
+              <div class="row">
+                  <div class="col">
+                      <div class="mini-h3"><a href="{{ simpost.url }}">{{ simpost.data.title }}</a></div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col postline">
+                      <div class="postdate" style="margin-left: 0px">
+                          <i class="fas fa-calendar-day"></i>
+                          <div>{{ simpost.date | formatDisplayDate }}</div>
+                      </div>
+                  </div>
+              </div>
             </div>
           </div>
       {%- if loop.last -%}
@@ -80,7 +82,7 @@ templateEngineOverride: njk, md
       <div class="col-6" style="padding-left: 0px">{% include "blog-next.njk" -%}</div>
     </div>
   </div>
-  <div class="col-4 sidebar-section">
+  <div class="col-lg-4 sidebar-section">
     <div class="star-col-widget">
       <div class="row">
         <div class="col widget-title">Favourite Posts</div>
