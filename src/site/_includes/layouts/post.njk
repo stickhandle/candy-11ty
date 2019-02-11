@@ -42,8 +42,38 @@ templateEngineOverride: njk, md
 <div class="row">
   <div class="col-8 post-section">
     <div>{{ content | safe }}</div>
-    {%- for simpost in collections.posts | similar(tags, page.url, 1) -%}
-      <div class="row">{{ simpost.similarScore}} - {{ simpost.url }}</div>
+    {%- for simpost in collections.posts | similar(tags, page.url, 3) -%}
+      {%- if loop.first -%}
+        <div class="row"><div class="col widget-title">Related posts ...</div></div>
+        <div class="row similar-posts">
+      {%- endif -%}
+          <div class="col-4 similar-post">
+            {%- if simpost.data.mainImageFilename -%}
+                <div class="row">
+                    <div class="col">
+                        <a href="{{ simpost.url }}">
+                            <img src="/images/{{ simpost.data.mainImageFilename }}-{{ simpost.data.tinyImageSize }}.{{ simpost.data.mainImageExt }}" alt="{{ simpost.data.mainImageTitle | safe }}" title="{{ simpost.data.mainImageTitle | safe }}">
+                        </a>
+                    </div>
+                </div>
+            {%- endif -%}
+            <div class="row">
+                <div class="col">
+                    <div class="mini-h3"><a href="{{ simpost.url }}">{{ simpost.data.title }}</a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col postline">
+                    <div class="postdate" style="margin-left: 0px">
+                        <i class="fas fa-calendar-day"></i>
+                        <div>{{ simpost.date | formatDisplayDate }}</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+      {%- if loop.last -%}
+        </div>
+      {%- endif -%}
     {%- endfor -%}
     <div class="row next-prev-row">
       <div class="col-6" style="padding-right: 0px">{% include "blog-previous.njk" -%}</div>

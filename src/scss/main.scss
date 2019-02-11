@@ -415,6 +415,18 @@ blockquote:after {
   text-align: center;
 }
 
+.similar-post {
+  background-color: $bg-similar-post;
+  padding: 10px;
+  border: 1px solid;
+  img {
+    width: 100%;
+  }
+}
+.similar-post:hover {
+  background-color: $bg-similar-post-hover;
+}
+
 .header-spacer {
   height: 100px;
 }
