@@ -40,14 +40,14 @@ templateEngineOverride: njk, md
   </div>
 {% endif %}
 <div class="row">
-  <div class="col-lg-8 post-section">
+  <div class="col-12 col-lg-8 post-section">
     <div>{{ content | safe }}</div>
     {%- for simpost in collections.posts | similar(tags, page.url, 3) -%}
       {%- if loop.first -%}
         <div class="row"><div class="col widget-title">Related posts ...</div></div>
         <div class="row similar-posts">
       {%- endif -%}
-          <div class="col-sm-4 col-similar-post">
+          <div class="col-12 col-md-4 col-similar-post">
             <div class="similar-post h-100">
               {%- if simpost.data.mainImageFilename -%}
                   <div class="row">
@@ -82,18 +82,22 @@ templateEngineOverride: njk, md
       <div class="col-6" style="padding-left: 0px">{% include "blog-next.njk" -%}</div>
     </div>
   </div>
-  <div class="col-lg-4 sidebar-section">
+  <div class="col-12 col-lg-4 sidebar-section">
     <div class="star-col-widget">
       <div class="row">
         <div class="col widget-title">Favourite Posts</div>
       </div>
-      {%- include "star-list-col.njk" -%}
+      <div class="row">
+        <div class="col-6 widget-title">{%- include "star-list-col.njk" -%}</div>
+      </div>
     </div>
     <div class="tag-col-widget">
       <div class="row">
         <div class="col widget-title">List of Tags</div>
       </div>
-      {%- include "tag-list-col.njk" -%}
+      <div class="row">
+        <div class="col-6 widget-title">{%- include "tag-list-col.njk" -%}</div>
+      </div>
     </div>
   </div>
 </div>
