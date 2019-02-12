@@ -415,11 +415,13 @@ blockquote:after {
   text-align: center;
 }
 
+.col-similar-post {
+  margin-top: 10px;
+}
 .similar-post {
   background-color: $bg-similar-post;
   padding: 10px;
   border: 1px solid;
-  margin-top: 10px;
   img {
     width: 100%;
   }
