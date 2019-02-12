@@ -41,5 +41,5 @@ module.exports = function(collection, sametags, noturl, maxcount) {
       }
     });
     scoredArr = [...scored].sort((a, b) => b.similarScore - a.similarScore);
-    return new Set(scoredArr.slice(0, maxcount-1));
+    return new Set(scoredArr.slice(0, maxcount));
   };
