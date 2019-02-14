@@ -1,4 +1,4 @@
-module.exports = function(collection, sametags, noturl, maxcount) {
+module.exports = function(collection, sametags, noturl, maxcount, includestars) {
     let scored = new Set();
     let simtags = sametags;
     if( typeof simtags === "string" ) {
@@ -26,7 +26,7 @@ module.exports = function(collection, sametags, noturl, maxcount) {
           itemtags = [itemtags];
         }
         itemtags.forEach(function(itemtag) {
-          if( itemtag == "star") {
+          if( includestars && itemtag == "star") {
             score = score+1;
           } else {
             if( simtags.indexOf(itemtag) > -1 ) {

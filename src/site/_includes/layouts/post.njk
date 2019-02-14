@@ -42,25 +42,29 @@ templateEngineOverride: njk, md
 <div class="row">
   <div class="col-12 col-lg-8 post-section">
     <div>{{ content | safe }}</div>
-    {%- for simpost in collections.posts | similar(tags, page.url, 3) -%}
+    {%- for simpost in collections.posts | similar(tags, page.url, 2, true) -%}
       {%- if loop.first -%}
         <div class="row"><div class="col widget-title">Related posts ...</div></div>
         <div class="row similar-posts">
       {%- endif -%}
-          <div class="col-12 col-md-4 col-similar-post">
+          <a href="{{ simpost.url }}" class="col-12 col-md-6 col-similar-post">
             <div class="similar-post h-100">
               {%- if simpost.data.mainImageFilename -%}
                   <div class="row">
                       <div class="col">
-                          <a href="{{ simpost.url }}">
-                              <img src="/images/{{ simpost.data.mainImageFilename }}-{{ simpost.data.tinyImageSize }}.{{ simpost.data.mainImageExt }}" alt="{{ simpost.data.mainImageTitle | safe }}" title="{{ simpost.data.mainImageTitle | safe }}">
-                          </a>
+                        <img src="/images/{{ simpost.data.mainImageFilename }}-{{ simpost.data.tinyImageSize }}.{{ simpost.data.mainImageExt }}" alt="{{ simpost.data.mainImageTitle | safe }}" title="{{ simpost.data.mainImageTitle | safe }}">
+                      </div>
+                  </div>
+              {%- else -%}
+                  <div class="row">
+                      <div class="col">
+                        <img src="/images/no_image-200.jpg" alt="no image available" title="no image available">
                       </div>
                   </div>
               {%- endif -%}
               <div class="row">
                   <div class="col">
-                      <div class="mini-h3"><a href="{{ simpost.url }}">{{ simpost.data.title }}</a></div>
+                      <div class="mini-h3">{{ simpost.data.title }}</div>
                   </div>
               </div>
               <div class="row">
@@ -72,7 +76,7 @@ templateEngineOverride: njk, md
                   </div>
               </div>
             </div>
-          </div>
+          </a>
       {%- if loop.last -%}
         </div>
       {%- endif -%}
