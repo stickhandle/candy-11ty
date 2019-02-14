@@ -23,7 +23,7 @@ $bg-header-color: $yellow;
 $bg-code: #f5f7ff;
 $bg-footer-color: $med-grey;
 $bg-blog-list-item-odd: mix($blue, $bg-page-color, 20%);
-$bg-star-col-widget: mix($blue, $bg-page-color, 20%);
+$bg-star-col-widget: $bg-page-color;
 $bg-tag-col-widget: mix($pink, $bg-page-color, 20%);
 $bg-next-previous-hover: mix($blue, $bg-page-color, 20%);
 $bg-similar-post: mix($blue, $bg-page-color, 20%);
