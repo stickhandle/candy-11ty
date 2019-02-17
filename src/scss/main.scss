@@ -56,6 +56,17 @@ h1.title {
   margin-top:0.5em;
   margin-bottom:0.1em;
 }
+h1.super-title {
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  font-size: 4em;
+  @include bp(md) {
+    font-size: 5em;
+  }
+  @include bp(xl) {
+    font-size: 6em;
+  }
+}
 h2 {
   font-size: 1.5em;
   @include bp(md) {
@@ -75,13 +86,13 @@ h3 {
   }
 }
 
-.mini-h3 {
+.mini-h3, .h3-to-mini h3 {
   color: $hX-color;
   font-family: $hX-font;
   font-weight: 700;
   margin-top:0.5em;
   margin-bottom:0.5em;
-  line-height: 0.75em;
+  line-height: 1.0em;
   font-size: 1.0em;
   @include bp(md) {
     font-size: 1.15em;
@@ -214,7 +225,6 @@ div.taglist-item .fas {
 }
 
 .blog-list-item {
-  
   padding: 0px 20px 20px;
   .excerpt {
     margin-top: 20px;
@@ -392,6 +402,16 @@ blockquote:after {
   font-size: 0.875em;
 }
 
+blockquote.bq-dark {
+  border-color: $bg-blockquote-dark;
+  background-color: $bg-blockquote-dark;
+  color: #fff;
+}
+blockquote.bq-dark:before {
+  background-color: $bg-blockquote-dark;
+  border-radius: 25px;
+}
+
 .tag-counter-list {
   margin-bottom: 2em;
 }
@@ -433,6 +453,59 @@ a.similar-post-thumb, a.star-post-thumb {
 
 .center {
   text-align: center;
+}
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+  margin-right: 0;
+}
+
+p.lead {
+  font-size: 1.25rem;
+  @include bp(md) {
+    font-size: 1.5em;
+  }
+  span.txt-rotate {
+    font-family: $hX-font;
+    font-weight: 700;
+  }
+}
+
+.deploy-netflify-row {
+  color: $bg-page-color;
+  background-color: $bg-netlify-color;
+  border-top: 2px solid $bg-page-color;
+  .candy-logo {
+    color: $pink;
+  }
+  a:link, a:visited {
+    color: $bg-page-color;
+    text-decoration: none;
+    border-bottom: solid 1px #ebebeb;
+  }
+  a:hover, a:focus {
+    color: #333;
+    border-bottom: solid 1px #666;
+  }
+}
+
+.netlify-button {
+  height: 60px;
+}
+.container-fluid blockquote {
+  padding: 1.5em 1.0em 0.5em 1.0em;
+}
+
+.cycle-item-b {
+  background-color: $bg-cycle-b;
+  @include bp(lg) {
+    background-color: inherit;
+  }
+}
+
+.cycle-item-a, .cycle-item-b {
+  padding-bottom: 10px;
 }
 
 footer {

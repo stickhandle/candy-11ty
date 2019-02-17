@@ -4,16 +4,11 @@ title: Portfolio
 layout: layouts/page.njk
 ---
 <div class="row">
-  <div class="col">
-    <blockquote cite="Charles Schulz">All I really need is love, but a little candy now and then doesn't hurt!</blockquote>
-  </div>
-</div>
-<div class="row">
     {%- for photo in collections.photos %}
         <div class="col-6 col-md-4">
                 <div class="row">
                     <div class="col">
-                        <h3><a class="title-href" href="{{ photo.url }}">{{ photo.data.title }}</a></h1>
+                        <h3><a class="title-href" href="{{ photo.url }}">{{ photo.data.title }}</a></h3>
                     </div>
                 </div>
                 <div class="row">

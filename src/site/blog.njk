@@ -3,11 +3,6 @@ permalink: /blog/
 title: Blog
 layout: layouts/page.njk
 ---
-<div class="row">
-  <div class="col">
-    <blockquote cite="Scott Adams">You don't argue with a four-year old about why he shouldn't eat candy for dinner.</blockquote>
-  </div>
-</div>
 {% set cls = cycler("odd", "even") %}
 {%- for post in collections.posts %}
 <div class="blog-list-item {{ cls.next() }}">

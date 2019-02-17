@@ -1,0 +1,104 @@
+---
+title: Candy | Home
+layout: layouts/base.njk
+bodyClass: candy-page
+templateEngineOverride: njk, md
+contentContainerClass: container-fluid
+---
+<div class="row justify-content-end parallax-window">
+  <div class="col-6 col-lg-5 pr-5">
+    <h1 class="super-title">Candy</h1>
+    <p class="lead">
+      <span class="candy-logo">Candy</span> is an Eleventy project starter with loads of sugar on top ... including extras like&nbsp;
+      <span class="txt-rotate" data-period="1000" data-rotate='[ "Bootstrap 4.", "Gulp.", "Sass.", "Custom Widgets.", "BigfootJs.", "jQuery.", "PrismJS", "Google Fonts.", "Custom Filters.", "SEO Optimizations." ]'></span>
+    </p>
+  </div>
+</div>
+<div class="row deploy-netflify-row p-3 justify-content-center">
+  <div class="col-12 col-md-7 col-lg-6">
+    <div>Get your own clone of Eleventy + <span class="candy-logo">Candy</span> deployed to <a href="https://www.netlify.com">Netlify</a>! Click the <i>Deploy to Netlify</i> button and follow the instructions.</div>
+  </div>
+  <div class="col-12 col-md-5 col-lg-3">
+    <p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/stickhandle/eleventy-candy"><img class="netlify-button" src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <blockquote cite="Charles Schulz">All I really need is love, but a little candy now and then doesn't hurt!</blockquote>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col"><h3>Latest from the Blog ...</h3></div>
+  </div>
+  {%- set cls = cycler("odd", "even") -%}
+  {%- for post in collections.posts.slice(0, 3) %}
+    <div class="blog-list-item h3-to-mini {{ cls.next() }}">
+        <div class="row">
+            {% if post.data.mainImageFilename -%}
+                {% if cls.current == 'odd' -%}
+                    {% include "blog-item-odd.njk" -%}
+                {% else -%}
+                    {% include "blog-item-even.njk" -%}
+                {% endif -%}
+            {% else -%}
+                {% include "blog-item-noimage.njk" -%}
+            {% endif -%}
+        </div>
+    </div>
+  {%- endfor %}
+</div>
+<div class="row">
+  <div class="col">
+    <blockquote class="bq-dark" cite="Scott Adams">You don't argue with a four-year old about why he shouldn't eat candy for dinner.</blockquote>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col"><h3>Latest from the Portfolio ...</h3></div>
+  </div>
+  <div class="row">
+    {%- set cls = cycler("cycle-item-a", "cycle-item-b", "cycle-item-b", "cycle-item-a") -%}
+    {%- for photo in collections.photos.slice(0, 4) %}
+        <div class="col-6 col-lg-3 {{ cls.next() }}">
+                <div class="row">
+                    <div class="col">
+                        <div class="mini-h3"><a class="title-href" href="{{ photo.url }}">{{ photo.data.title }}</a></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col postline">
+                        <div class="postdate" style="margin-left: 0px">
+                            <i class="fas fa-calendar-day"></i>
+                            <div>{{ photo.date | formatDisplayDate }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col main-image">
+                        <a href="{{ photo.url }}">
+                            <img src="/images/{{ photo.data.mainImageFilename }}-{{ photo.data.thumbImageSize }}.{{ photo.data.mainImageExt }}" alt="{{ photo.data.mainImageTitle | safe }}" title="{{ photo.data.mainImageTitle | safe }}">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col postline">
+                        <div class="tags">
+                            {% for tag in photo.data.tags -%}
+                                {% if tag != "untagged" -%}
+                                    {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
+                                    <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+                                {% endif -%}
+                            {% endfor -%}
+                        </div>
+                    </div>
+                </div>
+        </div>
+    {%- endfor %}
+  </div>
+</div>
+
+
+
+
+
