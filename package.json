@@ -36,6 +36,8 @@
     "gulp-shell": "^0.6.5",
     "gulp-uglify": "^3.0.0",
     "luxon": "^1.9.0",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-footnote": "^3.0.1",
     "netlify-lambda": "^0.2.0",
     "pump": "^3.0.0",
     "require-dir": "^1.0.0"

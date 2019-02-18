@@ -1,5 +1,14 @@
 module.exports = function(eleventyConfig) {
-
+  //mardown-it
+  let markdownIt = require("markdown-it");
+  let markdownItEmoji = require("markdown-it-emoji");
+  let markdownItFootnote = require("markdown-it-footnote");
+  let options = {
+    html: true
+  };
+  let markdownLib = markdownIt(options).use(markdownItEmoji).use(markdownItFootnote);
+  
+  eleventyConfig.setLibrary("md", markdownLib);
   // syntax highlighting plugin
   const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
   eleventyConfig.addPlugin(syntaxHighlightPlugin, {

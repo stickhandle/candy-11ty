@@ -16,3 +16,6 @@ Good question. Here's what it will do...
 1. Netlify will clone the git repository of this project into your Github account. You will be asked for the required permissions to add the repo for you.
 2. They'll create a new site for you in Netlify, and configure it to use your shiny new repo. Right away you'll be able to deploy changes simply by pushing changes to your repo.
 3. That's it really.
+
+And now we try markdown packages :-). First lets add a footnote ^[Here is an inline not]. And here is a second ^[A second footnote].
+

@@ -509,8 +509,8 @@ p.lead {
 }
 
 footer {
-  padding-top: 2em;
-  padding-bottom: 4em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
   background-color: $bg-footer-color;
 
   a:link, a:visited {
@@ -521,6 +521,7 @@ footer {
     color: $accent-color;
     border-bottom: solid 1px $text-color;
   }
+  
   .footer-header {
     hr {
       margin: 20px 0px;
@@ -538,5 +539,17 @@ footer {
       padding: 0px 10px 0px 0px;
     }
   }
+
+}
+.footnote-ref>a:before {
+  display: inline-block;
+  content: " ";
+  margin-top: -130px;
+  height: 130px;
+  visibility: hidden;
+}
+.footnote-item {
+  padding-top: 130px;
+  margin-top: -130px;
 }
 
