@@ -7,6 +7,7 @@ function handleResize() {
     location.reload();
 }
 */
+$('.txt-rotate').text('');
 $('.parallax-window').parallax({imageSrc: '/images/candybowl_fancies-1600.jpg'});
 
 var TxtRotate = function(el, toRotate, period) {
