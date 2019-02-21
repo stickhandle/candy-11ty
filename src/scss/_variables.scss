@@ -1,38 +1,48 @@
 // Breakpoints
+
 $bp-xs: "(max-width: 575px)";
 $bp-sm: "(min-width: 576px)";
 $bp-md: "(min-width: 768px)";
 $bp-lg: "(min-width: 992px)";
 $bp-xl: "(min-width: 1200px)";
 
-// Colours
+// Candy basic colors
+
+$white: #fff;
 $med-grey: #A2ABAB;
 $yellow: #FFEEA6;
 $green: #CBEAA6;
 $pink: #F7BCEF;
 $blue: #BCF4F5;
+$medblue: mix($blue, $white, 40%);
+$lightblue: mix($blue, $white, 20%);
 
 // Element color assignment
-$text-color: #333;
-$hX-color: #555;
-$accent-color: #666;
-$photoline-color: #000;
-$tagline-color: #aaa;
-$bg-page-color: #fff;
-$bg-header-color: $yellow; 
+
+$text-color: #333; //base text color
+$selected-text-color: #fff; //text selected for copy
+$hX-color: #555; //header text color
+$photoline-color: #000; //photo overlay title text 
+$tagline-color: #aaa; //post date and tags line
+
+// Background color assignment
+
+$bg-page-color: $white; 
+$bg-selected-text-color: #666;
 $bg-code: #f5f7ff;
+$bg-header-color: $yellow; 
 $bg-footer-color: $med-grey;
-$bg-netlify-color: $med-grey;
-$bg-blockquote-dark: $med-grey;
-$bg-blog-list-item-odd: mix($blue, $bg-page-color, 20%);
-$bg-star-col-widget: $bg-page-color;
-$bg-tag-col-widget: mix($pink, $bg-page-color, 20%);
-$bg-next-previous-hover: mix($blue, $bg-page-color, 20%);
-$bg-similar-post: mix($blue, $bg-page-color, 20%);
-$bg-similar-post-hover: mix($blue, $bg-page-color, 40%);
-$bg-cycle-b: mix($blue, $bg-page-color, 20%);
+$bg-content-block-dark-color: $med-grey;
+$bg-content-block-light-color: $lightblue;
+$bg-content-block-light-color-hover: $medblue;
+
+// Other CSS elements
+$accent-color: #666; //anchor underline hover and visited link text, code and pre border, footer anchor text
+
+
 
 // Fonts
+
 $body-font: 'Roboto', sans-serif;
 $hX-font: Courgette, sans-serif; 
 $code-font: 'Roboto Mono', monospace;

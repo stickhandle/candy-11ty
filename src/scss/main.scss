@@ -3,12 +3,12 @@
 @import '_prism-syntax';
 
 ::-moz-selection {
-  background-color: $accent-color;
-  color: $bg-page-color;
+  background-color: $bg-selected-text-color;
+  color: $selected-text-color;
 }
 ::selection {
-  background-color: $accent-color;
-  color: $bg-page-color;
+  background-color: $bg-selected-text-color;
+  color: $selected-text-color;
 }
 
 body {
@@ -120,7 +120,6 @@ h3 {
 
 .star-col-widget {
   padding-bottom: 20px;
-  background-color: $bg-star-col-widget;
   border-top: 2px solid $med-grey;
   border-bottom: 2px solid $med-grey;
 }
@@ -128,7 +127,7 @@ h3 {
 .tag-col-widget {
   padding: 0px 10px 10px;
   border-bottom: 2px solid $med-grey;
-  background-color: $bg-tag-col-widget;
+  background-color: $bg-content-block-light-color;
   .taglist-item {
     font-size: 14px;
     .fas {
@@ -169,7 +168,7 @@ h3 {
 }
 
 .next:hover, .previous:hover {
-  background-color: $bg-next-previous-hover;
+  background-color: $bg-content-block-light-color;
 }
 
 .next-previous-ind {
@@ -232,7 +231,7 @@ div.taglist-item .fas {
 }
 
 .blog-list-item.odd {
-    background-color: $bg-blog-list-item-odd;
+    background-color: $bg-content-block-light-color;
 }
 
 .excerpt {
@@ -403,12 +402,12 @@ blockquote:after {
 }
 
 blockquote.bq-dark {
-  border-color: $bg-blockquote-dark;
-  background-color: $bg-blockquote-dark;
+  border-color: $bg-content-block-dark-color;
+  background-color: $bg-content-block-dark-color;
   color: #fff;
 }
 blockquote.bq-dark:before {
-  background-color: $bg-blockquote-dark;
+  background-color: $bg-content-block-dark-color;
   border-radius: 25px;
 }
 
@@ -436,7 +435,7 @@ a.similar-post-thumb, a.star-post-thumb {
 }
 
 .similar-post, .star-post {
-  background-color: $bg-similar-post;
+  background-color: $bg-content-block-light-color;
   padding: 10px;
   border: 1px solid;
   img {
@@ -444,7 +443,7 @@ a.similar-post-thumb, a.star-post-thumb {
   }
 }
 .similar-post:hover, .star-post:hover {
-  background-color: $bg-similar-post-hover;
+  background-color: $bg-content-block-light-color-hover;
 }
 
 .header-spacer {
@@ -478,8 +477,8 @@ p.lead {
 
 .deploy-netflify-row {
   color: $bg-page-color;
-  background-color: $bg-netlify-color;
-  border-top: 2px solid $bg-page-color;
+  background-color: $bg-content-block-dark-color;
+  margin-top: 2px;;
   .candy-logo {
     color: $pink;
   }
@@ -502,7 +501,7 @@ p.lead {
 }
 
 .cycle-item-b {
-  background-color: $bg-cycle-b;
+  background-color: $bg-content-block-light-color;
   @include bp(lg) {
     background-color: inherit;
   }
