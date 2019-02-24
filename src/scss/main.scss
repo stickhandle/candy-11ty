@@ -237,9 +237,17 @@ div.taglist-item .fas {
 .excerpt {
   .more {
     display: inline-block;
+    line-height: 1rem;
+    font-size: $more-font-size;
     padding-left: 10px;
-    font-family: $more-font;
-    font-style: $more-font-style;
+    a {
+      color: $anchor-more-color;
+      text-decoration: none;
+      border-bottom: none;
+    }
+    a:hover, a:focus {
+      color: $anchor-more-hover-color;
+    }
   }
 }
 

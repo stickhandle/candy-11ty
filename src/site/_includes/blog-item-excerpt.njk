@@ -1,20 +1,20 @@
 {% if post.data.excerpt == "auto" -%}
     <div class="row">
         <div class="col excerpt">{{ post.templateContent | striptags(true) | truncate(150) | safe }}
-            <div class="more"><a href="{{ post.url }}">read</a></div>
+            <div class="more"><a href="{{ post.url }}"><i class="far fa-arrow-alt-circle-right"></i></a></div>
         </div>
     </div>
 {% elif post.data.excerpt == "comment" -%}
 <div class="row">
     <div class="col excerpt">{{ post.templateContent | excerpt | striptags(true) | safe }}
-        <div class="more"><a href="{{ post.url }}">read</a></div>
+        <div class="more"><a href="{{ post.url }}"><i class="far fa-arrow-alt-circle-right"></i></a></div>
     </div>
 </div>
 {% elif post.data.excerpt == "custom" -%}
     {% if post.data.customExcerpt -%}
     <div class="row">
         <div class="col excerpt">{{ post.data.customExcerpt | safe }}
-            <div class="more"><a href="{{ post.url }}">read</a></div>
+            <div class="more"><a href="{{ post.url }}"><i class="far fa-arrow-alt-circle-right"></i></a></div>
         </div>
     </div>
     {% endif %}

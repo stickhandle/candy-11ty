@@ -13,7 +13,6 @@ $body-font: 'Roboto', sans-serif;
 $hX-font: Courgette, sans-serif; 
 $logo-font: Courgette, sans-serif;
 $code-font: 'Roboto Mono', monospace;
-$more-font: 'Roboto', sans-serif;
 $postline-font: 'Roboto Mono', 'Roboto', sans-serif;
 $photoline-font: 'Roboto Mono', 'Roboto', sans-serif;
 $blockquote-person-font: 'Roboto Mono', 'Roboto', sans-serif;
@@ -26,6 +25,7 @@ $body-font-weight: 400;
 $body-font-size: 16px;
 $body-line-height: 1.8;
 $body-md-font-size: 18px;
+$more-font-size: 1.5rem;
 $lead-font-size: 1.25rem;
 $lead-md-font-size: 1.5em;
 $lead-rotate-font-weight: 700;
@@ -37,7 +37,6 @@ $postline-font-size: 14px;
 $photoline-font-weight: 400;
 $photoline-font-size: 14px;
 $Xline-fas-size: 16px;
-$more-font-style: italic;
 $logo-font-weight: bold;
 $logo-text-decoration: underline;
 $code-font-size: 0.8em;
@@ -104,6 +103,10 @@ $anchor-dark-content-block-text-color: $white;
 $anchor-dark-content-block-text-hover-color: $almost-black;
 $anchor-dark-content-block-ul-color: $white;
 $anchor-dark-content-block-ul-hover-color: $almost-black;
+//more anchor
+$anchor-more-color: $dark-grey;
+$anchor-more-hover-color: $med-grey;
+
 
 /* Other CSS elements */
 
