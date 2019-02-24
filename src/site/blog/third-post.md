@@ -6,6 +6,7 @@ mainImageTitle: Assortment of Candies
 tags:
     - ssg
     - star
+excerpt: none
 ---
 
-<!--excerpt-->Another simple page. Since all post pages are tagged `post` they form a collection and can be easily inspected and iterated over. See that on the [home page](/)<!--end-excerpt--> tagged `post` they
+Another simple page. Since all post pages are tagged `post` they form a collection and can be easily inspected and iterated over. See that on the [home page](/)

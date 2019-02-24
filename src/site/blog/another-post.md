@@ -3,6 +3,7 @@ title: Another Post Page
 date: 2018-03-28
 mainImageFilename: candy_bg_egg
 mainImageTitle: Eggs over Candy
+excerpt: comment
 tags:
   - ssg
   - eleventy

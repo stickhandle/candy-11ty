@@ -20,11 +20,5 @@
             </div>
         </div>
     </div>
-    {% if post.data.excerpt -%}
-        <div class="row">
-            <div class="col excerpt">{{ post.templateContent | excerpt | safe }}
-                <div class="more">... <a href="{{ post.url }}">continue</a></div>
-            </div>
-        </div>
-    {% endif -%}
+{% include "blog-item-excerpt.njk" -%}
 </div>

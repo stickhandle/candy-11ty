@@ -9,7 +9,7 @@ mainImageFilename: jellybeans
 mainImageTitle: Sea of Jellybeans
 ---
 
-<!--excerpt-->There's not much here in the sample post page.<!--end-excerpt--> Better get to work.
+There's not much here in the sample post page. Better get to work.
 
 ## An H2 Element
 
