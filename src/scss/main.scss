@@ -13,13 +13,13 @@
 
 body {
   background-color: $bg-page-color;
-  color: mix($text-color, $bg-page-color, 80%);
+  color: $text-color;
   font-family: $body-font;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.8;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
   @include bp(md) {
-    font-size: 18px;
+    font-size: $body-md-font-size;
   }
 }
 
@@ -38,7 +38,7 @@ header {
 h1, h2, h3 {
   color: $hX-color;
   font-family: $hX-font;
-  font-weight: 700;
+  font-weight: $hX-font-weight;
   margin-top:0.8em;
   margin-bottom:0.5em;
   line-height: 1em;
@@ -89,7 +89,7 @@ h3 {
 .mini-h3, .h3-to-mini h3 {
   color: $hX-color;
   font-family: $hX-font;
-  font-weight: 700;
+  font-weight: $hX-font-weight;
   margin-top:0.5em;
   margin-bottom:0.5em;
   line-height: 1.0em;
@@ -104,8 +104,8 @@ h3 {
 
 .widget-title {
   font-family: $widget-title-font;
-  color: $hX-color;
-  font-weight: 700;
+  color: $widget-title-color;
+  font-weight: $widget-title-font-weight;
   margin-top:0.7em;
   margin-bottom:0.7em;
   line-height: 1.0em;
@@ -120,14 +120,14 @@ h3 {
 
 .star-col-widget {
   padding-bottom: 20px;
-  border-top: 2px solid $med-grey;
-  border-bottom: 2px solid $med-grey;
+  border-top: 2px solid $border-color;
+  border-bottom: 2px solid $border-color;
 }
 
 .tag-col-widget {
   padding: 0px 10px 10px;
-  border-bottom: 2px solid $med-grey;
-  background-color: $bg-content-block-light-color;
+  border-bottom: 2px solid $border-color;
+  background-color: $bg-light-content-block-color;
   .taglist-item {
     font-size: 14px;
     .fas {
@@ -155,25 +155,25 @@ h3 {
 
 .next {
   text-align: right;
-  border-top: 2px solid $med-grey;
-  border-bottom: 2px solid $med-grey;
+  border-top: 2px solid $border-color;
+  border-bottom: 2px solid $border-color;
   padding-bottom: 10px;
 }
 
 .previous {
   text-align: left;
-  border-top: 2px solid $med-grey;
-  border-bottom: 2px solid $med-grey;
+  border-top: 2px solid $border-color;
+  border-bottom: 2px solid $border-color;
   padding-bottom: 10px;
 }
 
 .next:hover, .previous:hover {
-  background-color: $bg-content-block-light-color;
+  background-color: $bg-light-content-block-color;
 }
 
 .next-previous-ind {
   font-family: $next-previous-ind-font;
-  font-size: 14px;
+  font-size: $next-previous-ind-font-size;
 }
 
 p {
@@ -182,10 +182,10 @@ p {
 
 div.postline, div.postline a {
   display: inline;
-  color: $tagline-color;
-  font-family: $tagline-font;
-  font-weight: 400;
-  font-size: 14px;
+  color: $postline-color;
+  font-family: $postline-font;
+  font-weight: $postline-font-weight;
+  font-size: $postline-font-size;
   div {
     display: inline;
   }
@@ -193,8 +193,8 @@ div.postline, div.postline a {
 div.photoline {
   text-align: right;
   font-family: $photoline-font;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: $photoline-font-weight;
+  font-size: $photoline-font-size;
   background: $bg-page-color;
   opacity: 0.7;
   margin: -50px 15px 0px;
@@ -207,14 +207,14 @@ div.photoline {
 div.tags {
   margin-right: 10px;
   .fas {
-    font-size: 16px;
+    font-size: $Xline-fas-size;
     padding-right: 5px;
   }
 }
 
 div.postdate {
   .fas {
-    font-size: 16px;
+    font-size: $Xline-fas-size;
     padding-right: 5px;
   }
 }
@@ -231,27 +231,28 @@ div.taglist-item .fas {
 }
 
 .blog-list-item.odd {
-    background-color: $bg-content-block-light-color;
+    background-color: $bg-light-content-block-color;
 }
 
 .excerpt {
   .more {
     display: inline-block;
     padding-left: 10px;
-    font-style: italic;
+    font-family: $more-font;
+    font-style: $more-font-style;
   }
 }
 
 hr {
   margin: 20px;
-  color: $hX-color;
+  color: $hr-color;
   border: none;
   height: 1px;
-  background-color: $hX-color;
+  background-color: $bg-hr-color;
 }
 
 .separator {
-  background: $bg-page-color;
+  background: $bg-separator-color;
   height: 10px;
   position: relative;
   width: 100%;
@@ -290,33 +291,34 @@ ul, ol {
 }
 
 a:link, a:visited {
-  color: $accent-color;
+  color: $anchor-text-color;
   text-decoration: none;
-  border-bottom: solid 1px mix($text-color, $bg-page-color, 10%);
+  border-bottom: $anchor-ul;
 }
 a:hover, a:focus {
-  color: $text-color;
-  border-bottom: solid 1px $accent-color;
+  color: $anchor-text-hover-color;
+  border-bottom: $anchor-ul-hover;
 }
 
 .candy-logo, a.candy-logo, nav a.candy-logo:link {
-  font-weight: bold;
-  text-decoration: underline;
-  font-family: $hX-font;
+  font-weight: $logo-font-weight;
+  text-decoration: $logo-text-decoration;
+  font-family: $logo-font;
 }
 
 nav {
   a:link, a:visited {
-    color: $text-color;
+    color: $anchor-nav-text-color;
     text-decoration: none;
-    border: none;
+    border: $anchor-nav-ul;
   }
   .fas, .fab, .far {
     padding-right: 5px;
     padding-left: 10px;
   }
   a:hover, a:focus {
-    color: $med-grey;
+    color: $anchor-nav-text-hover-color;
+    border: $anchor-nav-ul-hover;
   }
   a.navbar-brand {
     font-size: 1.7em;
@@ -327,11 +329,11 @@ nav {
     -o-transform: rotate(-15deg);
   }
   a.navbar-brand:hover, a.navbar-brand:focus {
-    color: $green;
+    color: $navbar-brand-hover-color;
   }
 
   button.navbar-toggler {
-    outline-color: $med-grey;   
+    outline-color: $navbar-toggler-outline-color;   
   }  
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -343,16 +345,11 @@ nav {
   padding: 10px 0px 5px;
 }
 
-.portfolio-item {
-  border: 1px solid $med-grey;
-
-}
-
 code {
   font-family: $code-font;
-  font-size: 0.8em;
-  background-color:  $bg-code;
-  border: 1px solid $accent-color;
+  font-size: $code-font-size;
+  background-color:  $bg-code-pre;
+  border: 1px solid $border-color;
   color: $text-color;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -365,7 +362,7 @@ code[class*="language-"] {
 }
 
 pre {
-  border: 1px solid $accent-color;
+  border: 1px solid $border-color;
   code {
     border: none;
   }
@@ -376,7 +373,7 @@ blockquote {
   text-align: center;
   border-width: 2px 0;
   border-style: solid;
-  border-color: #eee;
+  border-color: $blockquote-border-color;
   padding: 1.5em 0 0.5em;
   margin: 1.5em 0;
   position: relative;
@@ -389,7 +386,7 @@ blockquote:before {
   transform: translate(-50%, -50%);
   width: 4rem;
   height: 2rem;
-  font: 6em/1.08em $hX-font;
+  font: $blockquote-before-font;
   text-align: center;
   background-color: white;
 }
@@ -398,16 +395,16 @@ blockquote:after {
   display: block;
   text-align: right;
   font-family: $blockquote-person-font;
-  font-size: 0.875em;
+  font-size: $blockquote-person-font-size;
 }
 
 blockquote.bq-dark {
-  border-color: $bg-content-block-dark-color;
-  background-color: $bg-content-block-dark-color;
-  color: #fff;
+  border-color: $dark-content-block-border-color;
+  background-color: $bg-dark-content-block-color;
+  color: $dark-content-block-font-color;
 }
 blockquote.bq-dark:before {
-  background-color: $bg-content-block-dark-color;
+  background-color: $bg-dark-content-block-color;
   border-radius: 25px;
 }
 
@@ -417,10 +414,10 @@ blockquote.bq-dark:before {
 
 .tag-counter {
   margin: 0px 3px;
-  border: 1px solid $text-color;
-  background-color: $blue;
+  border: 1px solid $border-color;
+  background-color: $bg-tag-counter-color;
   display: inline-block;
-  font-size: 0.7em;
+  font-size: $tag-counter-font-size;
   border-radius: 50%;
   width: 20px;
   line-height: 20px;
@@ -429,21 +426,20 @@ blockquote.bq-dark:before {
 
 a.similar-post-thumb, a.star-post-thumb {
   margin-top: 10px;
-  color: #666;
   text-decoration: none;
   border-bottom: none;
 }
 
 .similar-post, .star-post {
-  background-color: $bg-content-block-light-color;
+  background-color: $bg-light-content-block-color;
   padding: 10px;
-  border: 1px solid;
+  border: 1px solid $border-color;
   img {
     width: 100%;
   }
 }
 .similar-post:hover, .star-post:hover {
-  background-color: $bg-content-block-light-color-hover;
+  background-color: $bg-light-content-block-color-hover;
 }
 
 .header-spacer {
@@ -461,35 +457,35 @@ a.similar-post-thumb, a.star-post-thumb {
 }
 
 p.lead {
-  font-size: 1.25rem;
+  font-size: $lead-font-size;
   @include bp(md) {
-    font-size: 1.5em;
+    font-size: $lead-md-font-size;
   }
   span.txt-rotate {
     font-family: $hX-font;
-    font-weight: 700;
+    font-weight: $lead-rotate-font-weight;
   }
   span.txt-rotate-space {
     font-family: $hX-font;
-    font-weight: 700;
+    font-weight: $lead-rotate-font-weight;
   }
 }
 
 .deploy-netflify-row {
-  color: $bg-page-color;
-  background-color: $bg-content-block-dark-color;
-  margin-top: 2px;;
+  color: $dark-content-block-font-color;
+  background-color: $bg-dark-content-block-color;
+  margin-top: 2px;
   .candy-logo {
     color: $pink;
   }
   a:link, a:visited {
-    color: $bg-page-color;
+    color: $anchor-dark-content-block-text-color;
     text-decoration: none;
-    border-bottom: solid 1px #ebebeb;
+    border-bottom: solid 1px $anchor-dark-content-block-ul-color;
   }
   a:hover, a:focus {
-    color: #333;
-    border-bottom: solid 1px #666;
+    color: $anchor-dark-content-block-text-hover-color;
+    border-bottom: solid 1px $anchor-dark-content-block-ul-hover-color;
   }
 }
 
@@ -501,7 +497,7 @@ p.lead {
 }
 
 .cycle-item-b {
-  background-color: $bg-content-block-light-color;
+  background-color: $bg-light-content-block-color;
   @include bp(lg) {
     background-color: inherit;
   }
@@ -517,12 +513,12 @@ footer {
   background-color: $bg-footer-color;
 
   a:link, a:visited {
-    color: mix($text-color, $bg-page-color, 70%);
-    border-bottom: solid 1px mix($accent-color, $bg-page-color, 70%);
+    color: $anchor-footer-text-color;
+    border-bottom: $anchor-footer-ul;
   }
   a:hover, a:focus {
-    color: $accent-color;
-    border-bottom: solid 1px $text-color;
+    color:$anchor-footer-text-hover-color;
+    border-bottom: $anchor-footer-ul-hover;
   }
   
   .footer-header {

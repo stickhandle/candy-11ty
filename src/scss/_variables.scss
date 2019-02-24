@@ -1,4 +1,4 @@
-// Breakpoints
+/* Breakpoints */
 
 $bp-xs: "(max-width: 575px)";
 $bp-sm: "(min-width: 576px)";
@@ -6,51 +6,115 @@ $bp-md: "(min-width: 768px)";
 $bp-lg: "(min-width: 992px)";
 $bp-xl: "(min-width: 1200px)";
 
-// Candy basic colors
+/* Fonts */
+
+//font-family
+$body-font: 'Roboto', sans-serif;
+$hX-font: Courgette, sans-serif; 
+$logo-font: Courgette, sans-serif;
+$code-font: 'Roboto Mono', monospace;
+$more-font: 'Roboto', sans-serif;
+$postline-font: 'Roboto Mono', 'Roboto', sans-serif;
+$photoline-font: 'Roboto Mono', 'Roboto', sans-serif;
+$blockquote-person-font: 'Roboto Mono', 'Roboto', sans-serif;
+$blockquote-symbol-font: Courgette, sans-serif;
+$widget-title-font: 'Roboto', sans-serif;
+$next-previous-ind-font: 'Roboto Mono', 'Roboto', sans-serif;
+$lead-rotate-font: Courgette, sans-serif;
+//font attributes
+$body-font-weight: 400;
+$body-font-size: 16px;
+$body-line-height: 1.8;
+$body-md-font-size: 18px;
+$lead-font-size: 1.25rem;
+$lead-md-font-size: 1.5em;
+$lead-rotate-font-weight: 700;
+$hX-font-weight: 700;
+$widget-title-font-weight: 700;
+$next-previous-ind-font-size: 14px;
+$postline-font-weight: 400;
+$postline-font-size: 14px;
+$photoline-font-weight: 400;
+$photoline-font-size: 14px;
+$Xline-fas-size: 16px;
+$more-font-style: italic;
+$logo-font-weight: bold;
+$logo-text-decoration: underline;
+$code-font-size: 0.8em;
+$blockquote-before-font: 6em/1.08em $blockquote-symbol-font;
+$blockquote-person-font-size: 0.875em;
+$tag-counter-font-size: 0.7em;
+
+/* Candy basic colors */
 
 $white: #fff;
+$light-grey: #eee;
 $med-grey: #A2ABAB;
+$dark-grey: #555;
+$almost-black: #333;
+$black: #000;
 $yellow: #FFEEA6;
 $green: #CBEAA6;
 $pink: #F7BCEF;
 $blue: #BCF4F5;
-$medblue: mix($blue, $white, 40%);
-$lightblue: mix($blue, $white, 20%);
+$medblue: mix($blue, $white, 50%);
+$lightblue: mix($blue, $white, 30%);
 
-// Element color assignment
-
-$text-color: #333; //base text color
-$selected-text-color: #fff; //text selected for copy
-$hX-color: #555; //header text color
-$photoline-color: #000; //photo overlay title text 
-$tagline-color: #aaa; //post date and tags line
-
-// Background color assignment
+/* Background color assignment */
 
 $bg-page-color: $white; 
-$bg-selected-text-color: #666;
-$bg-code: #f5f7ff;
+$bg-separator-color: $white;
+$bg-selected-text-color: $dark-grey;
+$bg-code-pre: $lightblue;
 $bg-header-color: $yellow; 
 $bg-footer-color: $med-grey;
-$bg-content-block-dark-color: $med-grey;
-$bg-content-block-light-color: $lightblue;
-$bg-content-block-light-color-hover: $medblue;
+$bg-hr-color: $dark-grey;
+$bg-dark-content-block-color: $med-grey;
+$bg-light-content-block-color: $lightblue;
+$bg-light-content-block-color-hover: $medblue;
+$bg-tag-counter-color: $blue;
 
-// Other CSS elements
-$accent-color: #666; //anchor underline hover and visited link text, code and pre border, footer anchor text
+/* Element color assignment */
 
+$text-color: $dark-grey;
+$selected-text-color: $white;
+$hX-color: $dark-grey;
+$hr-color: $dark-grey;
+$photoline-color: $black; 
+$postline-color: $med-grey;
+$widget-title-color: $dark-grey;
+$blockquote-border-color: $med-grey;
+$dark-content-block-border-color: $med-grey;
+$dark-content-block-font-color: $white;
+//body anchors
+$anchor-text-color: $dark-grey;
+$anchor-text-hover-color: $dark-grey;
+$anchor-ul-color: mix($anchor-text-color, $bg-page-color, 25%);
+$anchor-ul-hover-color: $dark-grey;
+//footer anchors
+$anchor-footer-text-color: $dark-grey;
+$anchor-footer-text-hover-color: $dark-grey;
+$anchor-footer-ul-color: mix($anchor-footer-text-color, $bg-footer-color, 25%);
+$anchor-footer-ul-hover-color: $dark-grey;
+//nav anchors
+$anchor-nav-text-color: $almost-black;
+$anchor-nav-text-hover-color: $med-grey;
+//content block anchors
+$anchor-dark-content-block-text-color: $white;
+$anchor-dark-content-block-text-hover-color: $almost-black;
+$anchor-dark-content-block-ul-color: $white;
+$anchor-dark-content-block-ul-hover-color: $almost-black;
 
+/* Other CSS elements */
 
-// Fonts
-
-$body-font: 'Roboto', sans-serif;
-$hX-font: Courgette, sans-serif; 
-$code-font: 'Roboto Mono', monospace;
-$tagline-font: 'Roboto Mono', 'Roboto', sans-serif;
-$more-font: 'Roboto Mono', 'Roboto', sans-serif;
-$photoline-font: 'Roboto Mono', 'Roboto', sans-serif;
-$blockquote-person-font: 'Roboto Mono', 'Roboto', sans-serif;
-$widget-title-font: 'Roboto', sans-serif;
-$next-previous-ind-font: 'Roboto Mono', 'Roboto', sans-serif;
+$anchor-ul: solid 1px $anchor-ul-color;
+$anchor-ul-hover: solid 1px $anchor-ul-hover-color;
+$anchor-footer-ul: solid 1px $anchor-footer-ul-color;
+$anchor-footer-ul-hover: solid 1px $anchor-footer-ul-hover-color;
+$anchor-nav-ul: none;
+$anchor-nav-ul-hover: none;
+$border-color: $dark-grey;
+$navbar-toggler-outline-color: $med-grey;
+$navbar-brand-hover-color: $blue;
 
 
