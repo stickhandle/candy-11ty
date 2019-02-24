@@ -1,5 +1,15 @@
+{% if not post.data.mainImageTitle  %}
+    {% set mainImageTitle = post.data.mainImageFilename %}
+{% else %}    
+    {% set mainImageTitle = post.data.mainImageTitle %}
+{% endif %}
+{% if not post.data.mainImageAltText  %}
+    {% set mainImageAltText = mainImageTitle %}
+{% else %}    
+    {% set mainImageAltText = post.data.mainImageAltText %}
+{% endif %}
 <div class="col-4 main-image">
     <a href="{{ post.url }}">
-        <img src="/images/{{ post.data.mainImageFilename }}-{{ post.data.thumbImageSize }}.{{ post.data.mainImageExt }}" alt="{{ post.data.mainImageTitle | safe }}" title="{{ post.data.mainImageTitle | safe }}">
+        <img src="/images/{{ post.data.mainImageFilename }}-{{ post.data.thumbImageSize }}.{{ post.data.mainImageExt }}" alt="{{ mainImageAltText | safe }}" title="{{ mainImageTitle | safe }}">
     </a>
 </div>

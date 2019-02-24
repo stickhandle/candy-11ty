@@ -29,9 +29,12 @@ contentContainerClass: container
   {% if not mainImageTitle  %}
     {% set mainImageTitle = mainImageFilename %}
   {% endif %}
+  {% if not mainImageAltText  %}
+    {% set mainImageAltText = mainImageTitle %}
+  {% endif %}
   <div class="row">
     <div class="col main-image">
-      <img src="/images/{{ mainImageFilename }}-{{ mainImageSize }}.{{ mainImageExt }}" alt="{{ mainImageTitle | safe }}" title="{{ mainImageTitle | safe }}">
+      <img src="/images/{{ mainImageFilename }}-{{ mainImageSize }}.{{ mainImageExt }}" alt="{{ mainImageAltText | safe }}" title="{{ mainImageTitle | safe }}">
     </div>
   </div>
   <div class="row">

@@ -5,4 +5,5 @@ tags:
   - worm
 mainImageFilename: candy_worms
 mainImageTitle: Candy Worms
+mainImageAltText: A pile of candy worms
 ---

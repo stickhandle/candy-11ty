@@ -19,10 +19,20 @@ layout: layouts/page.njk
                         </div>
                     </div>
                 </div>
+                {%- if not photo.data.mainImageTitle  -%}
+                    {% set mainImageTitle = photo.data.mainImageFilename %}
+                {%- else -%}
+                    {% set mainImageTitle = photo.data.mainImageTitle %}
+                {%- endif -%}
+                {%- if not photo.data.mainImageAltText  -%}
+                    {% set mainImageAltText = mainImageTitle %}
+                {%- else -%}
+                    {% set mainImageAltText = photo.data.mainImageAltText %}
+                {%- endif -%}
                 <div class="row">
                     <div class="col main-image">
                         <a href="{{ photo.url }}">
-                            <img src="/images/{{ photo.data.mainImageFilename }}-{{ photo.data.thumbImageSize }}.{{ photo.data.mainImageExt }}" alt="{{ photo.data.mainImageTitle | safe }}" title="{{ photo.data.mainImageTitle | safe }}">
+                            <img src="/images/{{ photo.data.mainImageFilename }}-{{ photo.data.thumbImageSize }}.{{ photo.data.mainImageExt }}" alt="{{ mainImageAltText | safe }}" title="{{ mainImageTitle | safe }}">
                         </a>
                     </div>
                 </div>
