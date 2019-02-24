@@ -45,11 +45,11 @@ contentContainerClass: container
 {% endif %}
 <div class="row">
   <div class="col-12 col-lg-8 post-section">
-    <div>{{ content | safe }}</div>
+    <div class="content">{{ content | safe }}</div>
     {%- for simpost in collections.posts | similar(tags, page.url, 2, true) -%}
       {%- if loop.first -%}
         <div class="row"><div class="col widget-title">Related Posts ...</div></div>
-        <div class="row similar-posts">
+        <section class="row related-articles">
       {%- endif -%}
           <a href="{{ simpost.url }}" class="col-12 col-md-6 similar-post-thumb">
             <div class="similar-post h-100">
@@ -82,7 +82,7 @@ contentContainerClass: container
             </div>
           </a>
       {%- if loop.last -%}
-        </div>
+        </section>
       {%- endif -%}
     {%- endfor -%}
     <div class="row next-prev-row">
@@ -91,7 +91,7 @@ contentContainerClass: container
     </div>
   </div>
   <div class="col-12 col-lg-4 sidebar-section">
-    <div class="star-col-widget">{%- include "star-list-col.njk" -%}</div>
+    <section class="star-col-widget recommended-articles">{%- include "star-list-col.njk" -%}</section>
     <div class="tag-col-widget">{%- include "tag-list-col.njk" -%}</div>
   </div>
 </div>
