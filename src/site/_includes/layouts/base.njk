@@ -7,7 +7,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css" />
-    <title>{{ title }}</title>
+    {% set absolutePostUrl %}{{ page.url | url | absoluteUrl(metadata.url) }}{% endset %}
+    <link rel="canonical" href="{{ absolutePostUrl }}" />
+    {% set _title = headTitlePre + " " + title + " " + headTitlePost %}
+    <title>{{ _title | replace("undefined","") | trim | truncate(60) | safe }}</title>
+    {%- if not metaDescription  -%}
+      {%- if not excerpt -%}
+        {% set _metaDescription = title %}
+      {%- else -%}
+        {% if excerpt == "comment" -%}
+          {% set _metaDescription = content | excerpt | striptags(true) %}
+        {% elif excerpt == "custom" -%}
+          {% set _metaDescription = customExcerpt %}
+        {%- else -%}
+          {% set _metaDescription = title %}
+        {% endif %}
+      {%- endif -%}
+    {%- else -%}
+      {% set _metaDescription = metaDescription %}
+    {%- endif -%}
+    <meta name="description" content="{{ _metaDescription | trim | truncate(280) | safe }}">
   </head>
   <body class="{{ bodyClass }}" >
     <div class="container-fluid">

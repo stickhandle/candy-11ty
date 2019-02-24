@@ -1,12 +1,13 @@
 {
   "title": "World Wide Wern",
-  "url": "https://wern.ca/",
+  "url": "https://www.wern.ca/",
+  "sitemap": "https://www.wern.ca/sitemap.xml",
   "feed": {
     "subtitle": "The world according to Wern.",
     "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "url": "https://wern.ca/feed/feed.xml",
-    "id": "https://wern.ca/"
+    "path": "/feed.xml",
+    "url": "https://www.wern.ca/feed.xml",
+    "id": "https://www.wern.ca/"
   },
   "author": {
     "name": "Werner Siemens",

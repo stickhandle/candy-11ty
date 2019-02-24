@@ -55,8 +55,8 @@ contentContainerClass: container-fluid
         </div>
         <div class="card-body">
           <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;Blog and Portfolio ready.</p>
-          <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;Custom Related Posts and Favorites widgets.</p>
-          <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;Custom Tags page.</p>
+          <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;Custom Related Posts, Favorites and Tag List widgets.</p>
+          <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;Custom tags page.</p>
           <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;Custom filters.</p>
           <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;Ready for RSS.</p>
           <p class="card-text"><i class="fas fa-arrow-right"></i>&nbsp;SEO Optimizations.</p>
@@ -103,49 +103,8 @@ contentContainerClass: container-fluid
   <div class="row">
     {%- set cls = cycler("cycle-item-a", "cycle-item-b", "cycle-item-b", "cycle-item-a") -%}
     {%- for photo in collections.photos.slice(0, 4) %}
-        <div class="col-6 col-lg-3 {{ cls.next() }}">
-                <div class="row">
-                    <div class="col">
-                        <div class="mini-h3"><a class="title-href" href="{{ photo.url }}">{{ photo.data.title }}</a></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col postline">
-                        <div class="postdate" style="margin-left: 0px">
-                            <i class="fas fa-calendar-day"></i>
-                            <div>{{ photo.date | formatDisplayDate }}</div>
-                        </div>
-                    </div>
-                </div>
-                {%- if not photo.data.mainImageTitle  -%}
-                    {% set mainImageTitle = photo.data.mainImageFilename %}
-                {%- else -%}
-                    {% set mainImageTitle = photo.data.mainImageTitle %}
-                {%- endif -%}
-                {%- if not photo.data.mainImageAltText  -%}
-                    {% set mainImageAltText = mainImageTitle %}
-                {%- else -%}
-                    {% set mainImageAltText = photo.data.mainImageAltText %}
-                {%- endif -%}
-                <div class="row">
-                    <div class="col main-image">
-                        <a href="{{ photo.url }}">
-                            <img src="/images/{{ photo.data.mainImageFilename }}-{{ photo.data.thumbImageSize }}.{{ photo.data.mainImageExt }}" alt="{{ mainImageAltText | safe }}" title="{{ mainImageTitle | safe }}">
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col postline">
-                        <div class="tags">
-                            {% for tag in photo.data.tags -%}
-                                {% if tag != "untagged" -%}
-                                    {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
-                                    <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
-                                {% endif -%}
-                            {% endfor -%}
-                        </div>
-                    </div>
-                </div>
+        <div class="col-6 col-lg-3 h3-to-mini {{ cls.next() }}">
+          {% include "photo-item.njk" -%}
         </div>
     {%- endfor %}
   </div>

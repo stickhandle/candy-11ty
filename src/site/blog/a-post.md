@@ -1,5 +1,7 @@
 ---
 title: A Post Page
+headTitlePre: "Target Keyword |"
+headTitlePost: "| Candy"
 date: 2018-03-21
 tags:
   - ssg
