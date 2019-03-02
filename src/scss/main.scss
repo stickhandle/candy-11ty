@@ -416,6 +416,22 @@ blockquote.bq-dark:before {
   border-radius: 25px;
 }
 
+.card {
+  background-color: $bg-card;
+  border-color: $border-color;
+  border-radius: unset;
+}
+
+.card-header {
+  background-color: $bg-card-header;
+  border-color: $border-color;
+}
+
+td.card-bullet {
+  vertical-align: top;
+  width: 30px;
+}
+
 .tag-counter-list {
   margin-bottom: 2em;
 }

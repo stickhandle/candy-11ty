@@ -2,6 +2,7 @@
   "title": "World Wide Wern",
   "url": "https://www.wern.ca/",
   "sitemap": "https://www.wern.ca/sitemap.xml",
+  "twitter": "@wernersiemens",
   "feed": {
     "subtitle": "The world according to Wern.",
     "filename": "feed.xml",
@@ -11,6 +12,7 @@
   },
   "author": {
     "name": "Werner Siemens",
-    "email": "stickhandle@gmail.com"
+    "email": "stickhandle@gmail.com",
+    "twitter": "@wernersiemens"
   }
 }

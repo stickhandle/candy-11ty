@@ -21,9 +21,6 @@ module.exports = function(eleventyConfig) {
 
   // Add filters
   const { DateTime } = require("luxon");
-  eleventyConfig.addFilter("dateDisplay", require("./filters/dates.js") );
-  eleventyConfig.addFilter("timestamp", require("./filters/timestamp.js") );
-  eleventyConfig.addFilter("squash", require("./filters/squash.js") );
   eleventyConfig.addFilter("excerpt", require("./filters/excerpt.js") );
   eleventyConfig.addFilter("similar", require("./filters/similar.js") );
   // date formats 
