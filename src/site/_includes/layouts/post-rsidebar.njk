@@ -44,7 +44,7 @@ contentContainerClass: container
   </div>
 {% endif %}
 <div class="row">
-  <div class="col-12 post-section">
+  <div class="col-12 col-lg-8 post-section">
     <div class="content">{{ content | safe }}</div>
     {%- for simpost in collections.posts | similar(tags, page.url, 2, true) -%}
       {%- if loop.first -%}
@@ -90,9 +90,9 @@ contentContainerClass: container
       <div class="col-6" style="padding-left: 0px">{% include "blog-next.njk" -%}</div>
     </div>
   </div>
-  <div class="col-12 sidebar-section">
-    <section class="star-col-widget recommended-articles">{%- include "star-list-row.njk" -%}</section>
-    <div class="tag-col-widget">{%- include "tag-list-row.njk" -%}</div>
+  <div class="col-12 col-lg-4 sidebar-section">
+    <section class="star-col-widget recommended-articles">{%- include "star-list-col.njk" -%}</section>
+    <div class="tag-col-widget">{%- include "tag-list-col.njk" -%}</div>
   </div>
 </div>
 

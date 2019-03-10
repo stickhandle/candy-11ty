@@ -55,6 +55,8 @@ $black: #000;
 $yellow: #FFEEA6;
 $green: #CBEAA6;
 $pink: #F7BCEF;
+$med-pink: mix($pink, $white, 50%);
+$light-pink: mix($pink, $white, 20%);
 $blue: #BCF4F5;
 $medblue: mix($blue, $white, 50%);
 $lightblue: mix($blue, $white, 30%);
@@ -74,6 +76,8 @@ $bg-light-content-block-color-hover: $medblue;
 $bg-tag-counter-color: $blue;
 $bg-card: $white;
 $bg-card-header: $lightblue;
+$bg-tbl-head-color: $med-pink;
+$bg-tbl-stripe-color: $light-pink;
 
 /* Element color assignment */
 
@@ -108,7 +112,8 @@ $anchor-dark-content-block-ul-hover-color: $almost-black;
 //more anchor
 $anchor-more-color: $dark-grey;
 $anchor-more-hover-color: $med-grey;
-
+//table
+$tbl-border-color: $med-grey;
 
 /* Other CSS elements */
 

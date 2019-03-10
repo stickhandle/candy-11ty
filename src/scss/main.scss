@@ -576,3 +576,34 @@ footer {
   margin-top: -130px;
 }
 
+table {
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid $tbl-border-color;
+
+  th,
+  td {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid $tbl-border-color;
+    border-top: 1px solid $tbl-border-color;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $tbl-border-color;
+    border-top: 2px solid $tbl-border-color;
+  }
+  thead tr {
+    background-color: $bg-tbl-head-color;
+  }
+  tbody tr:nth-of-type(even) {
+    background-color: $bg-tbl-stripe-color;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid $tbl-border-color;
+  }
+}
+

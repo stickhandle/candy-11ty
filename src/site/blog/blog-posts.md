@@ -9,11 +9,13 @@ tags:
     - frontmatter
 excerpt: none
 ---
-Candy makes it easy to create a blog. Using a combination of front-matter, with logical defaults, and Markdown, your workflow from idea to publish is simple.
+Candy makes it easy to create a blog. Using a combination of Nunjuck layout templates, front matter (with logical defaults) and Markdown, your workflow from idea to publish is simple.
 
-## Candy Post Template
+## Candy Post Layout
 
 By default, blog posts added to the `site\blog` folder use the `layouts\post.njk` nunjuck template. The `post.njk` template extends `layouts\base.njk` template which defines the basic structure of a Candy page.
+
+The `post.njk` template defines a page with full width header (inluding menu) and footer. The rest of the content, including the main image, article and widgets (similar posts, favourite posts, tags listing) are presented in a container powered by a Bootstrap grid. You can choose to use the `post-rsidebar.njk` layout to add a right-side sidebar to larger screens holding the favourite posts and tag listing widgets.
 
 ## Candy Front Matter
 
@@ -102,6 +104,8 @@ contentContainerClass: container
 ---
 ```
 
+The following table describes the data elements:
+
 | Key | Description |
 | --- | ----------- |
 | layout | This template will inherit from the base.njk template |
@@ -111,18 +115,69 @@ contentContainerClass: container
 
 ### Level 4 Front Matter - blog item yaml
 
-
+At the highest level, we have front matter defined in the blog item Markdown file itself. Front matter defined here will override any lower level settings, like in the template or blog.json files. In addition, a handful of variables are only defined here since they would be specific only to this one file. The item front matter could be as simple as defining a `title` and a `date`, or be more involved like this:
 
 ``` yaml
 ---
+layout: layouts/post-rsidebar.njk
 title: How to add Blog Posts
+headTitlePre: "Target Keyword |"
+headTitlePost: "| Candy"
 date: 2019-03-09
 mainImageFilename: candy_assorted2
+mainImageExt: png
 mainImageTitle: Assortment of Candies
 mainImageAltText: An assortment of hard candies
+excerpt: custom
+customExcerpt: This is the custom excerpt
+metaDescription: This is the meta description
 tags:
     - config
     - frontmatter
-excerpt: none
 ---
 ```
+
+The following table describes the data elements:
+
+| Key | Required? | Description |
+| --- | --- | --- |
+| layout | No | Override the `layout` template setting from `blog.json` |
+| title | Yes | Define the title of the page. The title is used in the generated `<h1>` tag and meta data for seo `<title>` tag  and open graph `<og:title>` tag. Be aware that the value is truncated in search displays at ~ 60 chars. |
+| headTitlePre | No | If present, this value will be prepended to the title value in the generated `<title>` and `<og:title>` tags. It can be useful for seo purposes to pre-pend a desirable keyword. |
+| headTitlePost | No | If present, this value will be appended to the title value in the generated `<title>` and `<og:title>` tags. It can be useful for seo purposes to append a desirable keyword. The append can also be used for branding of all search results |
+| date | Yes | Represents the publish date. Format: YYYY-MM-DD  |
+| mainImageFilename | No | Name of the image file in the `images` directory to use associate with this blog entry. Candy encourages all blog posts to be accompanied by a main image. If this value is present, all other "mainImage*" items are expected. |
+| mainImageExt | No | The image filename extension. The default, set in `blog.json` is "jpg". If your image is something else ... like "png" ... declare that here  |
+| mainImageTitle | No | Used in the `<img>` tag as the title attribute and in the overlay on the image. Also used as the value for the open graph `<og:image>` meta tag. If not provided, fallback is the mainImageFilename. |
+| mainImageAltText | No | Used in the `<img>` tag as the title attribute. If not provided, fallback is the mainImageTitle. |
+| excerpt | No | Informs the processor how an excerpt is to be generated. Possible values: auto, comment, custom, none. Defining a value here overrides the default value of "auto" from `blog.json`. The excerpt is used as a post teaser. It is also used as the value for the description and og:description meta tags in the page head if a "metaDescription" element is not provided. |
+| customExcerpt | No | If the value for `excerpt` is `custom`, then this value is expected. Provides the author with the ability to define a custom excerpt. |
+| metaDescription | No | If provided, this attribute will be used as the value for the description and og:description meta tags in the page head. |
+| tags | No | Assign as many tags to this piece of content as desired. This will override the value `untagged` from `blog.json`. The author can also assign the special `star` tag to the post to add it to the favourites list. |
+
+## Pulling It All Together ...
+
+The above is a lot of information, but creating a new post can be super easy. Let's imagine we want a new post called "My New Post". We also have a hero image file (my_hero_image.jpg) to go along with it. Here is what we need to do:
+
+1. Create a new file in the `src\site\blog` folder called  `my-new-post.md`.
+2. Add the my_hero_image.jpg image file to the `src\images` folder.
+3. Open `my-new-post.md` and add the following front matter:
+``` yaml
+---
+title: My New Post
+date: 2019-03-09
+mainImageFilename: my_hero_image
+---
+```
+4. Add content to `my-new-post.md` in Markdown format after the front matter.
+``` yaml
+---
+title: My New Post
+date: 2019-03-09
+mainImageFilename: my_hero_image
+---
+Here we add our post content in Markdown format.
+## An H2 Subtitle
+...
+```
+5. Build with Eleventy (yarn run build) and serve (yarn run serve). Profit! :-)
