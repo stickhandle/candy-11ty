@@ -1,7 +1,9 @@
 {
-    "layout" : "layouts/photo.njk",
-    "tags" : ["untagged"],
-    "mainImageExt" : "jpg",
-    "mainImageSize" : "1600",
-    "thumbImageSize" : "400"
-  }
+  "layout" : "layouts/photo.njk",
+  "tags" : ["untagged"],
+  "mainImageExt" : "jpg",
+  "mainImageSize" : "1600",
+  "medImageSize" : "800",
+  "thumbImageSize" : "400",
+  "tinyImageSize" : "200"
+}

@@ -46,7 +46,7 @@ The file `site\_data\metadata.json` defines a series of values that are be used 
 }
 ```
 
-The individual data items are self-explanatory. Obviously, you will want to update this file with your own site and user values. The values from this file are used in the `HEAD` of the generated HTML documents to define metadata.
+The individual data items are self-explanatory. Obviously, you will want to update this file with your own site and user values. The values from this file are used in the `HEAD` of the generated HTML documents to define metadata for seo and open graph.
 
 ### Level 2 Front Matter - blog.json
 
@@ -176,9 +176,13 @@ mainImageFilename: my_hero_image
 title: My New Post
 date: 2019-03-09
 mainImageFilename: my_hero_image
+tags:
+    - newblogpost
 ---
 Here we add our post content in Markdown format.
 ## An H2 Subtitle
 ...
 ```
 5. Build with Eleventy (yarn run build) and serve (yarn run serve). Profit! :-)
+
+The new post will be added to the `http://localhost:8080/blog/` page, `http://localhost:8080/tags/#newblogpost` page, and its own page at `http://localhost:8080/portfolio/my-new-post/`.
