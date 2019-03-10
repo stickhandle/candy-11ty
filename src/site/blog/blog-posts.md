@@ -133,6 +133,7 @@ customExcerpt: This is the custom excerpt
 metaDescription: This is the meta description
 tags:
     - config
+    - layout
     - frontmatter
 ---
 ```
