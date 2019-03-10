@@ -6,8 +6,8 @@ mainImageTitle: Assortment of Candies
 mainImageAltText: An assortment of hard candies
 tags:
     - config
+    - layouts
     - frontmatter
-excerpt: none
 ---
 Candy makes it easy to create a blog. Using a combination of Nunjuck layout templates, front matter (with logical defaults) and Markdown, your workflow from idea to publish is simple.
 
@@ -133,7 +133,7 @@ customExcerpt: This is the custom excerpt
 metaDescription: This is the meta description
 tags:
     - config
-    - layout
+    - layouts
     - frontmatter
 ---
 ```
