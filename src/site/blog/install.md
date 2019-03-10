@@ -1,6 +1,6 @@
 ---
-title: Third Post Page
-date: 2019-01-12
+title: Use Candy to Start Your Own Project
+date: 2019-03-01
 mainImageFilename: candy_assorted2
 mainImageTitle: Assortment of Candies
 mainImageAltText: An assortment of hard candies

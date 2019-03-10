@@ -1,14 +1,14 @@
 {
-  "title": "World Wide Wern",
-  "url": "https://www.wern.ca/",
-  "sitemap": "https://www.wern.ca/sitemap.xml",
+  "title": "Candy",
+  "url": "https://candy-11ty.netlify.com/",
+  "sitemap": "https://candy-11ty.netlify.com/sitemap.xml",
   "twitter": "@wernersiemens",
   "feed": {
-    "subtitle": "The world according to Wern.",
+    "subtitle": "Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top.",
     "filename": "feed.xml",
     "path": "/feed.xml",
-    "url": "https://www.wern.ca/feed.xml",
-    "id": "https://www.wern.ca/"
+    "url": "https://candy-11ty.netlify.com/feed.xml",
+    "id": "https://candy-11ty.netlify.com/"
   },
   "author": {
     "name": "Werner Siemens",

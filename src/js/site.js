@@ -9,6 +9,7 @@ function handleResize() {
 */
 $('.txt-rotate').text('');
 $('.parallax-window').parallax({imageSrc: '/images/candybowl_fancies-1600.jpg'});
+$('table').addClass("table table-striped");
 
 var TxtRotate = function(el, toRotate, period) {
     this.toRotate = toRotate;
