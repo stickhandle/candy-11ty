@@ -98,7 +98,7 @@ The following table describes the data elements:
 | headTitlePre | No | If present, this value will be prepended to the title value in the generated `<title>` and `<og:title>` tags. It can be useful for seo purposes to pre-pend a desirable keyword. |
 | headTitlePost | No | If present, this value will be appended to the title value in the generated `<title>` and `<og:title>` tags. It can be useful for seo purposes to append a desirable keyword. The append can also be used for branding of all search results |
 | date | Yes | Represents the publish date. Format: YYYY-MM-DD  |
-| mainImageFilename | No | Name of the image file in the `images` directory to use associate with this blog entry. Candy encourages all blog posts to be accompanied by a main image. If this value is present, all other "mainImage*" items are expected. |
+| mainImageFilename | No | Name of the image file in the `images` directory to use associate with this blog entry. Candy encourages all blog posts to be accompanied by a main image. If this value is present, all other "mainImage*" items are expected. The mainImage is used for open graph meta data. |
 | mainImageExt | No | The image filename extension. The default, set in `portfolio.json` is "jpg". If your image is something else ... like "png" ... declare that here  |
 | mainImageTitle | No | Used in the `<img>` tag as the title attribute and in the overlay on the image. Also used as the value for the open graph `<og:image>` meta tag. If not provided, fallback is the mainImageFilename. |
 | mainImageAltText | No | Used in the `<img>` tag as the title attribute. If not provided, fallback is the mainImageTitle. |
