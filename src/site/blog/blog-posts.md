@@ -1,5 +1,6 @@
 ---
-title: How to add Blog Posts
+title: How to add a Blog Post
+headTitlePost: "| Candy"
 date: 2019-03-09
 mainImageFilename: candy_assorted2
 mainImageTitle: Assortment of Candies

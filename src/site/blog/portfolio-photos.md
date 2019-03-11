@@ -1,5 +1,6 @@
 ---
 title: How to add a Portfolio Photo
+headTitlePost: "| Candy"
 date: 2019-03-10
 mainImageFilename: candy_bg_egg
 mainImageTitle: Eggs over Candy
