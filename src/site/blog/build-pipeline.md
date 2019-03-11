@@ -2,7 +2,7 @@
 layout: layouts/post-rsidebar.njk
 title: Candy Build Pipeline
 headTitlePost: "| Candy"
-date: 2019-01-13
+date: 2019-03-02
 mainImageFilename: candy_worms
 mainImageTitle: Candy Worms
 mainImageAltText: A pile of candy worms
