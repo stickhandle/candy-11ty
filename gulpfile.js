@@ -146,7 +146,7 @@ gulp.task('build:local', gulp.series(
 
 // Get the data and build
 gulp.task('build', gulp.series(
-  // 'get:data',
+  'clean-build',
   'eleventy',
   'assets'
 ));

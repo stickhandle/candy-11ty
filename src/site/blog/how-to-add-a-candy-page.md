@@ -84,9 +84,8 @@ headTitlePre: "Target Keyword |"
 headTitlePost: "| Candy"
 date: 2019-03-09
 mainImageFilename: candy-eggs
-mainImageExt: png
-mainImageTitle: Eggs over Candy
-mainImageAltText: Candy eggs lying on a pile of candy
+mainImageExt: jpg
+mainImageSize: 1600
 metaDescription: This is the meta description of a candy egg photo
 ---
 ```
@@ -94,35 +93,51 @@ The following table describes the data elements:
 
 | Key | Required? | Description |
 | --- | --- | --- |
+| permalink | Yes | Define the url for the page |
 | title | Yes | Define the title of the page. The title is used in the generated `<h1>` tag and meta data for seo `<title>` tag  and open graph `<og:title>` tag. Be aware that the value is truncated in search displays at ~ 60 chars. |
 | headTitlePre | No | If present, this value will be prepended to the title value in the generated `<title>` and `<og:title>` tags. It can be useful for seo purposes to pre-pend a desirable keyword. |
 | headTitlePost | No | If present, this value will be appended to the title value in the generated `<title>` and `<og:title>` tags. It can be useful for seo purposes to append a desirable keyword. The append can also be used for branding of all search results |
 | date | Yes | Represents the publish date. Format: YYYY-MM-DD  |
-| mainImageFilename | No | Name of the image file in the `images` directory to use associate with this blog entry. Candy encourages all blog posts to be accompanied by a main image. If this value is present, all other "mainImage*" items are expected. The mainImage is used for open graph meta data. If it is not provided, the `<og:image>` meta falls back to og-image.jpg. |
-| mainImageExt | No | The image filename extension. The default, set in `portfolio.json` is "jpg". If your image is something else ... like "png" ... declare that here  |
-| mainImageTitle | No | Used in the `<img>` tag as the title attribute and in the overlay on the image. Also used as the value for the open graph `<og:image>` meta tag. If not provided, fallback is the mainImageFilename. |
-| mainImageAltText | No | Used in the `<img>` tag as the title attribute. If not provided, fallback is the mainImageTitle. |
-| metaDescription | No | If provided, this attribute will be used as the value for the description and og:description meta tags in the page head. |
-| tags | No | Assign as many tags to this piece of content as desired. This will override the value `untagged` from `blog.json`. The author can also assign the special `star` tag to the post to add it to the favourites list. |
+| mainImageFilename | No | Name of the image file in the `images` directory to use associate with this page. If this value is present, all other "mainImage*" items are expected. The mainImage is used for open graph meta data. If it is not provided, the `<og:image>` meta falls back to og-image.jpg. |
+| mainImageExt | No | The image filename extension. |
+| mainImageSize | No | The image size to use for the `<og:image>` meta. |
+| metaDescription | No | If provided, this attribute will be used as the value for the description and `og:description` meta tags in the page head. |
 
 ## Pulling It All Together ...
 
-The above is a lot of information, but creating a new portfolio photo entry can be super easy. Let's imagine we want to add a new photo file, "my_new_photo.jpg" as a portfolio item. Here is what we need to do:
+The above is a lot of information, but creating a new Candy page can be super easy. Let's imagine we want to add a new landing page at `/landing-page/` with "my_landing_image.jpg" as the associated image. Here is what we need to do:
 
-1. Create a new file in the `src\site\portfolio` folder called  `my-new-photo.md`.
-2. Add the my_new_photo.jpg image file to the `src\images` folder.
-3. Open `my-new-post.md` and add the following front matter:
+1. Create a new file in the `src\` folder called  `my-landing-page.md`.
+2. Add the my_landing_image.jpg image file to the `src\images` folder.
+3. Open `my-landing-page.md` and add the following front matter:
 ``` yaml
 ---
-title: My New Photo
+permalink: /landing-page/
+title: My New Landing Page
 date: 2019-03-09
-mainImageFilename: my_new_photo
-tags:
-    - newphoto
+mainImageFilename: my_landing_image
+mainImageExt: jpg
+mainImageSize: 1600
+metaDescription: This is my new landing page meta
 ---
 ```
-4. Build with Eleventy (yarn run build) and serve (yarn run serve). Profit! :-) 
+4. Add content to `my-landing-page.md` in Markdown format after the front matter.
+``` yaml
+---
+permalink: /landing-page/
+title: My New Landing Page
+date: 2019-03-09
+mainImageFilename: my_landing_image
+mainImageExt: jpg
+mainImageSize: 1600
+metaDescription: This is my new landing page meta
+---
+Here we add our page content in Markdown format.
+## An H2 Subtitle
+...
+```
+5. Build with Eleventy (yarn run build) and serve (yarn run serve). Profit! :-) 
 
-The new photo will be added to the `http://localhost:8080/portfolio/` page, `http://localhost:8080/tags/#newphoto` page, and its own page at `http://localhost:8080/portfolio/my-new-photo/`.
+The new page will be available at `http://localhost:8080/landing-page/`.
 
 
