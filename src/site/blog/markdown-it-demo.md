@@ -11,11 +11,14 @@ tags:
 excerpt: custom
 customExcerpt: A copy of the Markdown-it demo page styled by Candy. What you see is what you get!
 ---
+A copy of the [Markdown-it demo page](https://markdown-it.github.io/) styled by Candy. 
+
+Note that not all the plugins for markdown-it are used by included in Candy.
 
 # h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading
-#### h4 Heading
+#### h4 Heading0
 ##### h5 Heading
 ###### h6 Heading
 

@@ -495,10 +495,14 @@ p.lead {
   }
 }
 
-.deploy-netflify-row {
+.fluid-row {
+  margin-right: 0;
+}
+.deploy-netlify-row {
   color: $dark-content-block-font-color;
   background-color: $bg-dark-content-block-color;
   margin-top: 2px;
+  margin-right: 0;
   .candy-logo {
     color: $pink;
   }

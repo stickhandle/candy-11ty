@@ -1,39 +1,47 @@
 ---
-title: A Post Page
-headTitlePre: "Target Keyword |"
+title: Candy Extras
 headTitlePost: "| Candy"
-date: 2018-03-03
+date: 2019-03-16
+mainImageFilename: candy_bowls
+mainImageTitle: Bowls of Candy
+mainImageAltText:  Bowls of Candy
+excerpt: comment
 tags:
-  - ssg
-  - eleventy
-  - jamstack
-mainImageFilename: jellybeans
-mainImageTitle: Sea of Jellybeans
+    - config
+    - eleventy
 ---
+<!--excerpt-->
+Candy comes with a bunch of little extras.<!--end-excerpt-->
 
-There's not much here in the sample post page. Better get to work.
+## Bootstrap and JQuery
 
-## An H2 Element
+## PrismJS for Syntax Highlighting
 
-The common front-matter data for all of the files in the posts section are abstracted into a `posts.json` file so that we don't need to repeat that on every file. Handy.
+## Markdown-it Emoji and Footnote support
 
-### An H3 Element
+## Candy Build Pipeline
 
-It looks like this:
+## Sass
 
-``` json
-{
-  "layout" : "layouts/post.md",
-  "tags" : "post",
-  "templateEngineOverride": "njk,md"
-}
-```
+## Generated RSS feed.xml
 
-Adding syntax highlighting from PrismJS like this:
+## Similar Posts
 
-``` js
-function myFunction() {
-  return true;
-}
-```
+## Favourite Posts
+
+## Tag List with Counts
+
+## SEO Optimizations
+
+### Generated sitemap.xml
+
+### Generated robots.txt
+
+### Page meta data tags
+
+### Open Graph meta data tags
+
+
+
+
 

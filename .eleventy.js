@@ -33,9 +33,15 @@ module.exports = function(eleventyConfig) {
 
   // Create your collections
   eleventyConfig.addCollection("posts", function(collection) {
+    return collection.getFilteredByGlob("src/site/blog/*.md");
+  }); 
+  eleventyConfig.addCollection("stsop", function(collection) {
     return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
   });  
   eleventyConfig.addCollection("photos", function(collection) {
+    return collection.getFilteredByGlob("src/site/portfolio/*.md");
+  });  
+  eleventyConfig.addCollection("sotohp", function(collection) {
     return collection.getFilteredByGlob("src/site/portfolio/*.md").reverse();
   });
   eleventyConfig.addCollection("tagList", require("./filters/tagcounter"));
