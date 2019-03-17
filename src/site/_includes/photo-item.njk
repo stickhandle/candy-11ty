@@ -33,10 +33,16 @@
         <div class="tags">
             {% for tag in photo.data.tags -%}
                 {% if tag != "untagged" -%}
-                    {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
+                {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
+                {%- if tag != "star" -%}
                     <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
                 {% endif -%}
+                {% endif -%}
             {% endfor -%}
+            {%- if 'star' in photo.data.tags -%}
+                <div><a href="/tags/#{{ tag }}" class="tag"><i class="far fa-star"></i></a></div>
+            {%- endif -%}
+            
         </div>
     </div>
 </div>

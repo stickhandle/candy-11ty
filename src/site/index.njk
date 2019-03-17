@@ -85,7 +85,7 @@ metaDescription: Candy is an Eleventy project starter with loads of sugar on top
 </div>
 <div class="container">
   <div class="row">
-    <div class="col"><h3>From the Blog ...</h3></div>
+    <div class="col"><h3>From the <a href="/blog/">Blog</a> ...</h3></div>
   </div>
   {%- set cls = cycler("odd", "even") -%}
   {%- for post in collections.posts.slice(0, 3) %}
@@ -111,7 +111,7 @@ metaDescription: Candy is an Eleventy project starter with loads of sugar on top
 </div>
 <div class="container">
   <div class="row">
-    <div class="col"><h3>Latest from the Portfolio ...</h3></div>
+    <div class="col"><h3>Latest from the <a href="/portfolio/">Portfolio</a> ...</h3></div>
   </div>
   <div class="row">
     {%- set cls = cycler("cycle-item-a", "cycle-item-b", "cycle-item-b", "cycle-item-a") -%}

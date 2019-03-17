@@ -32,23 +32,32 @@ module.exports = function(eleventyConfig) {
   });
 
   // Create your collections
+
+  //blog posts in create order
   eleventyConfig.addCollection("posts", function(collection) {
     return collection.getFilteredByGlob("src/site/blog/*.md");
-  }); 
+  });
+  //blog posts in reverse create order - newest first
   eleventyConfig.addCollection("stsop", function(collection) {
     return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
-  });  
+  }); 
+  //portfolio photos in create order 
   eleventyConfig.addCollection("photos", function(collection) {
     return collection.getFilteredByGlob("src/site/portfolio/*.md");
   });  
+  //portfolio photos in reverse create order - newest first
   eleventyConfig.addCollection("sotohp", function(collection) {
     return collection.getFilteredByGlob("src/site/portfolio/*.md").reverse();
   });
-  eleventyConfig.addCollection("tagList", require("./filters/tagcounter"));
-  eleventyConfig.addCollection("tagListPosts", require("./filters/taglist"));
+  //posts or photos tagged star in reverse create order - newest first
   eleventyConfig.addCollection("stars", function(collection) {
     return collection.getFilteredByTag("star").reverse();
-  });  
+  });    
+  //list of tags with count per tag
+  eleventyConfig.addCollection("tagList", require("./filters/tagcounter"));
+  //list of posts per tag
+  eleventyConfig.addCollection("tagListPosts", require("./filters/taglist"));
+
 
   return {
     dir: {

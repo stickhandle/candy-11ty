@@ -10,7 +10,7 @@ contentContainerClass: container
     {% set tagUrl %}/tags/#{{ tagKey }}{% endset %}
     <div class="col-4 taglist-item">
       <i class="fas fa-tag"></i>
-      <a href="{{ tagUrl | url }}" class="tag">#{{ tagKey }}</a>
+      <a href="{{ tagUrl | url }}" class="tag">{% if tagKey == "star" -%}<i class="far fa-star"></i>{% else %}#{% endif %}{{ tagKey }}</a>
       <div class="tag-counter">{{ tagVal }}</div>
     </div>
   {% endfor %}
@@ -22,7 +22,7 @@ contentContainerClass: container
       <a name="{{tag}}"><div class="header-spacer"></div></a>
     </div>
     <div class="row">
-      <h2>#{{tag}}</h2>
+      <h2>{% if tag == "star" -%}<i class="far fa-star"></i>{% else %}#{% endif %}{{tag}}</h2>
     </div>
     {% for page in pages %}
         <div class="row taglistpost-item">
@@ -44,12 +44,17 @@ contentContainerClass: container
             <div class="row">
               <div class="col postline">
                   <div class="tags">
-                      {% for tag in page.data.tags -%}
+                    {% for tag in page.data.tags -%}
                         {% if tag != "untagged" -%}
-                          {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
-                          <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
+                        {% if loop.first %}<i class="fas fa-tags"></i>{% endif -%}
+                        {%- if tag != "star" -%}
+                            <div><a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a></div>
                         {% endif -%}
-                      {% endfor -%}
+                        {% endif -%}
+                    {% endfor -%}
+                    {%- if 'star' in page.data.tags -%}
+                        <div><a href="/tags/#{{ tag }}" class="tag"><i class="far fa-star"></i></a></div>
+                    {%- endif -%}
                   </div>
                   <div class="postdate">
                     <i class="fas fa-calendar-day"></i>
@@ -57,12 +62,26 @@ contentContainerClass: container
                   </div>
               </div>
             </div>
-            {% if page.data.excerpt %}
-              <div class="row">
-                <div class="col excerpt">{{ page.templateContent | excerpt | safe }}
-                  <div class="more">... <a href="{{ page.url }}">continue</a></div>
+            {% if page.data.excerpt == "auto" -%}
+                <div class="row">
+                    <div class="col excerpt">{{ page.templateContent | striptags(true) | truncate(150) | safe }}
+                        <div class="more"><a href="{{ page.url }}"><i class="far fa-arrow-alt-circle-right"></i></a></div>
+                    </div>
                 </div>
-              </div>
+            {% elif page.data.excerpt == "comment" -%}
+            <div class="row">
+                <div class="col excerpt">{{ page.templateContent | excerpt | striptags(true) | safe }}
+                    <div class="more"><a href="{{ page.url }}"><i class="far fa-arrow-alt-circle-right"></i></a></div>
+                </div>
+            </div>
+            {% elif page.data.excerpt == "custom" -%}
+                {% if page.data.customExcerpt -%}
+                <div class="row">
+                    <div class="col excerpt">{{ page.data.customExcerpt | safe }}
+                        <div class="more"><a href="{{ page.url }}"><i class="far fa-arrow-alt-circle-right"></i></a></div>
+                    </div>
+                </div>
+                {% endif %}
             {% endif %}
           </div>
         </div>
