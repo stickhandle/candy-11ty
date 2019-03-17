@@ -1,8 +1,8 @@
 {
-  "name": "eleventyone",
-  "version": "1.0.1",
-  "description": "A project bootstrap for Eleventy sites. With pipelines for Sass, Js, and Lambdas",
-  "author": "Phil Hawksworth",
+  "name": "candy-11ty",
+  "version": "1.0.0",
+  "description": "Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top.",
+  "author": "Werner Siemens",
   "license": "MIT",
   "scripts": {
     "eleventy": "gulp eleventy",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/philhawksworth/eleventyone"
+    "url": "https://github.com/stickhandle/candy-11ty"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.7.1",
