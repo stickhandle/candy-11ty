@@ -1,11 +1,9 @@
 ---
-title: Candy | About
+title: About
+headTitlePost: "| Candy"
+date: 2019-03-17
 layout: layouts/page.njk
-bodyClass: candy-page
-templateEngineOverride: njk, md
-contentContainerClass: container
-metaDescription: Candy is an Eleventy project starter with loads of sugar on top.
+metaDescription: "Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top."
 ---
-# About
 
 This is the about page.
