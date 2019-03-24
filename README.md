@@ -1,14 +1,15 @@
-# EleventyOne
+# Candy
 
-Phil's first port of call when starting another project using Eleventy.
+Candy is an Eleventy project starter with loads of sugar on top. 
 
-This project scaffold includes:
+Sweet extras like:
 
-- Eleventy with a skeleton site and some configs I use regularly
-- A date format filter for Nunjucks
-- Sass pipeline
-- JS pipeline
-- Serverless (FaaS) development pipeline with Netlify Functions for Lambda
+### 🍫 Delicious Build Pipeline
+
+### 🍬 Yummy Display Goodies
+
+### 🍭 Candy Custom Treats
+
 
 
 ## Instructions
