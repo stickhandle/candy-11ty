@@ -2,6 +2,8 @@
 
 Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top.
 
+![CandyAnimation](./candyAnimation.gif)
+
 ## Sweet Extras
 
 | 🍫 Delicious Build Pipeline | 🍬 Yummy Display Goodies | 🍭 Candy Custom Treats |
