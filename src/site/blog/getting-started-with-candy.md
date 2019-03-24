@@ -31,14 +31,14 @@ To install [graphicsmagick](http://www.graphicsmagick.org) locally for developme
 Assuming you have git installed locally, open a shell window and run:
 
 ``` bash
-git clone https://github.com/stickhandle/eleventy-candy.git
+git clone https://github.com/stickhandle/candy-11ty.git
 ```
 
-Once downloaded, cd into the eleventy-candy folder.
+Once downloaded, cd into the candy-11ty folder.
 
 ## Install Eleventy and Candy
 
-From the `eleventy-candy` folder, install all dependencies:
+From the `candy-11ty` folder, install all dependencies:
 
 ``` bash
 yarn install
