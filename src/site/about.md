@@ -3,7 +3,7 @@ title: About
 headTitlePost: "| Candy"
 date: 2019-03-17
 layout: layouts/page.njk
-metaDescription: "Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top."
+metaDescription: "Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top!"
 ---
 
 I'm Werner Siemens [<i class="fab fa-linkedin"></i>](https://www.linkedin.com/in/wernersiemens/). Dad, husband, developer and self-proclaimed beer expert. I put <span class="candy-logo">Candy</span> together as a learning experiment. I wanted to push out a few small websites but didn't want the hassle of managing servers ^[Something like a WordPress install on a VPS just felt too much like work.]. This led me to check out static site generators. I looked at a bunch of SSGs ^[I fooled around into Gatsby, Nextein, Lektor, Hugo, JBake, and Zola (né Gutenberg).] and settled on [Eleventy](https://www.11ty.io). It just made the most sense to me. YMMV.
