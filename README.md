@@ -4,6 +4,14 @@ Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on 
 
 ## Sweet Extras
 
+| 🍫 Delicious Build Pipeline | 🍬 Yummy Display Goodies | 🍭 Candy Custom Treats |
+| Yarn | Sass | Blog and Portfolio ready |
+| Gulp | Bootstrap 4 | Custom Related Posts, Favorites and Tag List widgets |
+| Markdown-it | JQuery 3.3 (slim) | Custom tags page |
+| Nunjucks templates | Google fonts | Custom filters |
+| Image pre-processing | Font Awesome | Ready for RSS |
+| JS and CSS minification | PrismJS | SEO Optimizations |
+
 ### 🍫 Delicious Build Pipeline
 
 - Yarn
