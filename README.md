@@ -66,6 +66,8 @@ Learn all about Eleventy by reading the [official docs](https://www.11ty.io/docs
 
 ## Netlify Instructions
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6cdf3e7c-fa38-4929-b948-de229bd3db41/deploy-status)](https://app.netlify.com/sites/candy-11ty/deploys)
+
 Get your own clone of Eleventy + Candy deployed to [Netlify](https://www.netlify.com)! 
 Click the *Deploy to Netlify* button and follow the instructions.
 
