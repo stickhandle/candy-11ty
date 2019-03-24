@@ -1,6 +1,6 @@
 # Candy
 
-Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top.
+Candy is a quick-start scaffold for building sites. It's Eleventy with sugar on top!
 
 ![CandyAnimation](./candyAnimation.gif)
 
