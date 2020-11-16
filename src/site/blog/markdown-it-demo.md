@@ -195,20 +195,9 @@ see [how to change output](https://github.com/markdown-it/markdown-it-emoji#chan
 
 ### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
 
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
 Inline footnote^[Text of inline footnote] definition.
 
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
+Here is a footnote reference.^[Here's another footnote.<br>It has break for mulitple lines.]
 
 ### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
 
