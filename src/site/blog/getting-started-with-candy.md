@@ -57,6 +57,7 @@ Pick your yarn command, open your browser and you're off to the races!
 
 ## Start Customizing
 
+Even if you are Gabe or Zack, you can do it!
 Learn all about Eleventy by reading the [official docs](https://www.11ty.io/docs/).
 
 
