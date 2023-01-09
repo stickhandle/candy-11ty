@@ -34,7 +34,7 @@
     "gulp-serve": "^1.4.0",
     "gulp-shell": "^0.8.0",
     "gulp-uglify": "^3.0.0",
-    "luxon": "^1.9.0",
+    "luxon": "^1.28.1",
     "markdown-it-emoji": "^2.0.0",
     "markdown-it-footnote": "^3.0.2",
     "netlify-lambda": "^2.0.1",
